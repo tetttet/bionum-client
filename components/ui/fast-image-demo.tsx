@@ -24,7 +24,7 @@ const FastImageDemo = ({ source }: { source: any }) => {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: 250,
+    height: 440,
     overflow: "hidden",
     paddingTop: 12,
   },

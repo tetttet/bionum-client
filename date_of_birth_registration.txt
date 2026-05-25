@@ -1,0 +1,125 @@
+Как сохраняется дата рождения при регистрации пользователя
+
+1. Где пользователь выбирает дату
+
+Дата рождения выбирается на втором шаге регистрации в компоненте
+components/register/registerInfo.tsx.
+
+Компонент использует DateTimePicker из @react-native-community/datetimepicker.
+Выбранная дата хранится на экране регистрации как объект Date в состоянии:
+
+dateOfBirth: Date | undefined
+
+Код находится в app/auth/register.tsx:
+
+const [dateOfBirth, setDateOfBirth] = useState<Date | undefined>();
+
+Когда пользователь выбирает дату, handleDateChange записывает выбранный объект Date
+в состояние dateOfBirth.
+
+
+2. Как дата форматируется перед отправкой
+
+Перед регистрацией дата преобразуется функцией toDateOnlyString из utils/_func.ts.
+
+В app/auth/register.tsx:
+
+const formattedDateOfBirth = toDateOnlyString(dateOfBirth);
+
+Функция toDateOnlyString берет локальные части даты:
+
+- год через getFullYear()
+- месяц через getMonth() + 1
+- день через getDate()
+
+После этого она собирает строку в формате:
+
+YYYY-MM-DD
+
+Например:
+
+15 апреля 1998 -> 1998-04-15
+
+Важно: функция не использует toISOString(), поэтому дата не должна сдвигаться из-за
+UTC/часового пояса. Берутся именно локальные день, месяц и год из выбранного Date.
+
+
+3. Как поле попадает в payload регистрации
+
+В app/auth/register.tsx формируется объект data:
+
+{
+  first_name: name,
+  middle_name: middleName || undefined,
+  last_name: surname,
+  date_of_birth: formattedDateOfBirth || undefined,
+  email,
+  password,
+  privacy_policy_consent: ...
+}
+
+Дата отправляется под ключом:
+
+date_of_birth
+
+Если пользователь не выбрал дату, toDateOnlyString вернет пустую строку, а поле
+date_of_birth станет undefined. Поэтому на клиенте дата рождения сейчас не является
+обязательной для регистрации.
+
+
+4. Куда отправляется дата
+
+Функция register находится в context/AuthContext.tsx.
+
+Перед отправкой из data убирается privacy_policy_consent, а остальные поля уходят
+на backend:
+
+axios.post(`${API_URL}/register`, registrationPayload)
+
+API_URL собирается так:
+
+API_BASE_URL = "https://bionum-server.vercel.app"
+API_URL = `${API_BASE_URL}/api/auth`
+
+Итоговый endpoint:
+
+https://bionum-server.vercel.app/api/auth/register
+
+То есть дата рождения уходит на сервер в теле POST-запроса в поле date_of_birth
+строкой формата YYYY-MM-DD.
+
+
+5. Что сохраняется на клиенте после регистрации
+
+После успешной регистрации сервер возвращает token и user.
+
+Клиент сохраняет только token в AsyncStorage:
+
+AsyncStorage.setItem("token", token)
+
+Объект user, в котором может быть date_of_birth, сохраняется в React state через:
+
+setUser(user)
+
+Отдельно date_of_birth в AsyncStorage не сохраняется. При следующем запуске приложения
+клиент берет token из AsyncStorage и делает запрос /verify, чтобы получить актуального
+пользователя с сервера.
+
+
+6. Типы данных
+
+В interface/AuthData.ts дата рождения описана как необязательная строка:
+
+date_of_birth?: string;
+
+В interface/User.ts поле пользователя тоже описано как необязательная строка:
+
+date_of_birth?: string;
+
+
+Коротко
+
+При регистрации дата рождения выбирается через DateTimePicker, хранится временно как
+Date, перед отправкой конвертируется в строку YYYY-MM-DD и отправляется на backend
+полем date_of_birth. На клиенте отдельно не сохраняется сама дата рождения; клиент
+сохраняет токен, а user с date_of_birth получает от сервера.

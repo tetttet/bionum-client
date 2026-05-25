@@ -1,5 +1,6 @@
 // WeekBars.tsx
 import { healthCardTheme, ThemeType } from "@/constants/theme";
+import { fs } from "@/constants/typography";
 import React from "react";
 import { Text, View } from "react-native";
 
@@ -48,7 +49,7 @@ const WeekBars = ({ t, compact = false }: WeekBarsProps) => {
           <Text
             style={{
               color: theme.subText,
-              fontSize: compact ? 9 : 10,
+              fontSize: compact ? fs(9) : fs(10),
               fontWeight: compact ? "500" : "400",
             }}
           >

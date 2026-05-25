@@ -1,126 +1,128 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { fs, lh } from "@/constants/typography";
+import { Platform, View } from "react-native";
+import Markdown from "react-native-markdown-display";
 
 type Props = {
   markdown: string;
   textColor: string;
+  textSize?: number;
+  accentColor?: string;
 };
 
-const MarkdownRender = ({ markdown, textColor }: Props) => {
-  if (!markdown)
-    return <Text style={{ color: textColor }}>No content available.</Text>;
+const capitalizeFirst = (text: string) => {
+  if (!text) return text;
+  return text.charAt(0).toUpperCase() + text.slice(1);
+};
 
-  // Разделяем по пустым строкам
-  const blocks = markdown.trim().split(/\n\s*\n/);
+const MarkdownRender = ({
+  markdown,
+  textColor,
+  textSize = 16,
+  accentColor = "#007AFF",
+}: Props) => {
+  const baseTextSize = fs(textSize);
+
+  const markdownStyles = {
+    body: {
+      color: textColor,
+      fontSize: baseTextSize,
+      lineHeight: lh(textSize * 1.4),
+    },
+    heading1: {
+      color: textColor,
+      fontSize: fs(textSize * 1.6),
+      lineHeight: lh(textSize * 1.6),
+      fontWeight: "800" as const,
+      marginTop: 24,
+      marginBottom: 12,
+      borderBottomWidth: 1,
+      borderBottomColor: `${textColor}33`,
+      paddingBottom: 8,
+    },
+    heading2: {
+      color: textColor,
+      fontSize: fs(textSize * 1.4),
+      fontWeight: "700" as const,
+      marginTop: 20,
+      marginBottom: 10,
+    },
+    heading3: {
+      color: textColor,
+      fontSize: fs(textSize * 1.2),
+      fontWeight: "600" as const,
+      marginTop: 16,
+      marginBottom: 8,
+    },
+
+    table: {
+      borderWidth: 1,
+      borderColor: `${textColor}44`,
+      borderRadius: 6,
+      marginVertical: 15,
+      overflow: "hidden" as const,
+    },
+    thead: {
+      backgroundColor: `${textColor}10`,
+      borderBottomWidth: 2,
+      borderBottomColor: `${textColor}44`,
+    },
+    th: {
+      padding: 10,
+      fontWeight: "bold" as const,
+      color: textColor,
+    },
+    td: {
+      padding: 10,
+      color: textColor,
+      borderBottomWidth: 1,
+      borderBottomColor: `${textColor}15`,
+    },
+    tr: {
+      borderBottomWidth: 0,
+    },
+
+    code_inline: {
+      backgroundColor: `${textColor}15`,
+      color: accentColor,
+      fontFamily: Platform.OS === "ios" ? "Courier" : "monospace",
+      borderRadius: 4,
+      paddingHorizontal: 5,
+    },
+    fence: {
+      backgroundColor: "#1e1e1e",
+      color: "#efefef",
+      fontFamily: Platform.OS === "ios" ? "Courier" : "monospace",
+      padding: 15,
+      borderRadius: 10,
+      marginVertical: 10,
+    },
+
+    link: {
+      color: accentColor,
+      textDecorationLine: "underline" as const,
+    },
+    blockquote: {
+      backgroundColor: `${accentColor}10`,
+      borderLeftColor: accentColor,
+      borderLeftWidth: 4,
+      paddingHorizontal: 15,
+      paddingVertical: 10,
+      marginVertical: 10,
+      borderRadius: 4,
+    },
+    hr: {
+      backgroundColor: `${textColor}22`,
+      height: 2,
+      marginVertical: 20,
+    },
+  };
 
   return (
-    <View>
-      {blocks.map((block, i) => {
-        // ===== HEADINGS =====
-        if (/^#{1,3}\s/.test(block)) {
-          const level = block.match(/^#{1,3}/)?.[0].length ?? 1;
-          const content = block.replace(/^#{1,3}\s*/, "");
-          const size = level === 1 ? 24 : level === 2 ? 20 : 18;
-          const marginTop = level === 1 ? 16 : 12;
-
-          return (
-            <Text
-              key={i}
-              style={{
-                fontSize: size,
-                fontWeight: "700",
-                marginTop,
-                marginBottom: 6,
-                color: textColor,
-              }}
-            >
-              {content}
-            </Text>
-          );
-        }
-
-        // ===== LISTS =====
-        if (/^[\-\*]\s+/m.test(block)) {
-          const items = block
-            .split(/\n/)
-            .map((line) => line.replace(/^[\-\*]\s+/, ""));
-          return (
-            <View key={i} style={{ marginVertical: 6 }}>
-              {items.map((item, idx) => (
-                <View
-                  key={idx}
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "flex-start",
-                    marginBottom: 4,
-                  }}
-                >
-                  <Text
-                    style={{
-                      color: textColor,
-                      fontSize: 18,
-                      lineHeight: 22,
-                      marginRight: 6,
-                    }}
-                  >
-                    •
-                  </Text>
-                  <Text
-                    style={{
-                      flex: 1,
-                      fontSize: 16,
-                      lineHeight: 22,
-                      color: textColor,
-                    }}
-                  >
-                    {renderInline(item, textColor)}
-                  </Text>
-                </View>
-              ))}
-            </View>
-          );
-        }
-
-        // ===== PARAGRAPHS =====
-        return (
-          <Text
-            key={i}
-            style={{
-              fontSize: 16,
-              lineHeight: 22,
-              marginBottom: 8,
-              color: textColor,
-            }}
-          >
-            {renderInline(block, textColor)}
-          </Text>
-        );
-      })}
+    <View style={{ flex: 1, width: "100%" }}>
+      <Markdown style={markdownStyles}>{capitalizeFirst(markdown)}</Markdown>
     </View>
   );
 };
-
-// ==== INLINE FORMATTING (bold, italic) ====
-function renderInline(text: string, textColor: string) {
-  const tokens = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).filter(Boolean);
-
-  return tokens.map((token, i) => {
-    if (/^\*\*[^*]+\*\*$/.test(token)) {
-      return (
-        <Text key={i} style={{ fontWeight: "700", color: textColor }}>
-          {token.replace(/\*\*/g, "")}
-        </Text>
-      );
-    }
-    if (/^\*[^*]+\*$/.test(token)) {
-      return (
-        <Text key={i} style={{ fontStyle: "italic", color: textColor }}>
-          {token.replace(/\*/g, "")}
-        </Text>
-      );
-    }
-    return <Text key={i}>{token}</Text>;
-  });
-}
 
 export default MarkdownRender;

@@ -1,11 +1,12 @@
 import Animated from 'react-native-reanimated';
+import { fs, lh } from "@/constants/typography";
 
 export function HelloWave() {
   return (
     <Animated.Text
       style={{
-        fontSize: 28,
-        lineHeight: 32,
+        fontSize: fs(28),
+        lineHeight: lh(32),
         marginTop: -6,
         animationName: {
           '50%': { transform: [{ rotate: '25deg' }] },

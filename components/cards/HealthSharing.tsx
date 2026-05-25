@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { useTheme } from "../ThemeContext";
 import GradientIcon from "../ui/gradient-icon";
+import { fs, lh } from "@/constants/typography";
 
 export default function HealthSharing() {
   const { theme } = useTheme();
@@ -38,7 +39,7 @@ export default function HealthSharing() {
           <Text
             style={[
               {
-                fontSize: 20,
+                fontSize: fs(20),
                 marginBottom: 20,
                 fontWeight: "600",
                 color: colors.text,
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   title: {
-    fontSize: 34,
+    fontSize: fs(34),
     fontWeight: "bold",
     marginBottom: 20,
   },
@@ -133,12 +134,12 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontWeight: "600",
-    fontSize: 16,
+    fontSize: fs(16),
     marginBottom: 4,
   },
   sectionText: {
-    fontSize: 14,
-    lineHeight: 20,
+    fontSize: fs(14),
+    lineHeight: lh(20),
   },
   button: {
     paddingVertical: 12,
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: fs(16),
     fontWeight: "600",
   },
   buttonOutline: {
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
     borderColor: "rgba(0,0,0,0.05)",
   },
   buttonOutlineText: {
-    fontSize: 16,
+    fontSize: fs(16),
     fontWeight: "600",
   },
 });

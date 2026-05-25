@@ -3,6 +3,7 @@ import { Theme } from "@/constants/theme";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { fs, lh } from "@/constants/typography";
 
 const SectionCard: React.FC<{
   theme: Theme;
@@ -108,7 +109,7 @@ export const TopHeaderWithOutDel = ({
 }) => {
   return (
     <View style={[styles.sectionLabelRow, { marginBottom: 16 }]}>
-      <Text style={[styles.sectionLabel, { color: theme.sectionLabel }]}>
+      <Text style={[styles.sectionLabel, { color: theme.sectionLabel, textTransform: "uppercase", width: "100%" }]}>
         {sectionLabel}
       </Text>
     </View>
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   sectionLabel: {
-    fontSize: 12,
+    fontSize: fs(12),
     fontWeight: "700",
     letterSpacing: 1,
   },
@@ -178,13 +179,13 @@ const styles = StyleSheet.create({
     paddingRight: 6,
   },
   cardTitle: {
-    fontSize: 17,
+    fontSize: fs(17),
     fontWeight: "700",
     marginBottom: 6,
   },
   cardDesc: {
-    fontSize: 13,
-    lineHeight: 18,
+    fontSize: fs(13),
+    lineHeight: lh(18),
     marginBottom: 12,
   },
   pill: {
@@ -194,7 +195,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   pillText: {
-    fontSize: 14,
+    fontSize: fs(14),
     fontWeight: "700",
   },
 });

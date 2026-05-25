@@ -1,0 +1,110 @@
+{
+  "psychomatrix_interpretation": {
+    "rows": {
+      "row_1": {
+        "name": "Hedeflere Ulaşma Yeteneği",
+        "numbers": "1-4-7",
+        "interpretations": {
+          "0": "Kişi isteklerini formüle etmez, plan kurmaz ve sonuca doğru ilerlemez; akışa bırakır ve koşulların ya da diğer insanların hayatını tamamen yönlendirmesine izin verir.",
+          "1": "Kişi kendisi için hedef belirlemez, plan yapmaz ve belirli bir yönde ilerlemez; bundan sonra ne olacağını tamamen kadere veya çevresindekilere bırakır.",
+          "2": "Kişi hedef koyup onlara ulaşabilir, ancak bunu temkinli yapar: harekete geçmeden önce hedefin uygulanabilir olduğundan ve kaynakların gerçekten yeterli olduğundan emin olmak ister.",
+          "3": "Kişi birçok niyet ve görev oluşturur, ancak bunların bir kısmı fazla iddialı ya da uygulanamayacak kadar gerçek dışı olabilir.",
+          "4": "Kişi birçok hedef oluşturur ve çoğu durumda bunları başarıyla gerçekleştirir.",
+          "5": "Kişi büyük ölçekli hedefler seçer ve onlara takıntılı biçimde ilerler; bazen dengeyi unutur ve her zaman yumuşak yöntemler seçmez.",
+          "6+": "Bu kişinin büyük hedefleri vardır ve aynı anda birçok yöne tutunur; bu dağınıklık nedeniyle kaçınılmaz olarak bazı şeyleri kaçırır."
+        }
+      },
+      "row_2": {
+        "name": "Aile Kurma Yeteneği",
+        "numbers": "2-5-8",
+        "interpretations": {
+          "0": "Bu kişi için aile öncelik değildir; aile olmadan da dolu dolu bir hayat yaşayabilir.",
+          "1": "Evliliğe girerse, bu daha çok içsel ihtiyaçtan değil toplumsal beklentilerden kaynaklanır; bu durumda aile onun için özel bir sevinç veya ilham kaynağına dönüşmez.",
+          "2": "Aile sizin için yaşamın ana önceliği değildir: ya bir başkasının sizi sevmesine izin verirsiniz, ya uygun olmayan partnerleri seçersiniz ya da ilişkilere daha pragmatik nedenlerle girersiniz.",
+          "3": "Aile kurma arzusu vardır, ancak şüpheler ve korkular zamanında karar vermeyi engeller; bu da çoğu zaman geç veya zor evliliklere yol açar.",
+          "4": "Aile sizin temel değerlerinizden biridir ve onu kurmak ve korumak için elinizden geleni yaparsınız.",
+          "5": "Aile sizin ana dayanağınızdır; onsuz kendinizi eksik hissedebilirsiniz. Ancak partnerden beklentiler çok yüksek olduğunda iyi fırsatları kaçırma ve uzun süre yalnız kalma riski doğar.",
+          "6+": "Aileyi idealize etmek ve partnerden aşırı yüksek beklentiler içinde olmak çoğu zaman hayal kırıklığına, hatta yalnızlığı seçme isteğine götürebilir."
+        }
+      },
+      "row_3": {
+        "name": "Yaşamdan Memnuniyet",
+        "numbers": "3-6-9",
+        "interpretations": {
+          "0": "Böyle bir kişi sürekli bir şeylerden memnuniyetsizlik duyar, önerileri reddeder ve nadiren biriyle uzlaşır. İçsel bir isyancı gibidir; sadece karşı çıkmak için bile karşı çıkabilir.",
+          "1": "Bu kişi mevcut düzenden memnun değildir. Çevresindeki gerçekliği, hatta tüm dünyayı dönüştürmek ister ve bunun için sıradan ya da sınırları zorlayan her türlü çabayı göstermeye hazırdır.",
+          "2": "Kişi huzursuzdur, sık sık memnuniyetsizlik yaşar ve değişime çekilir; sürekli kendini arar, ancak köklü adımları yalnızca gerçekten zorunlu olduğunda atar.",
+          "3": "Böyle bir kişi uyum içinde yaşamayı ve sakinliği değerli görmeyi bilir, ancak zaman zaman içinde değişime iten bir protesto duygusu uyanır. Bu dalgalanmalar istikrarını bozar ve kişi yeniden huzura dönmeye çalışır.",
+          "4": "Kişi kendisini tamamen tatmin eden bir yaşam düzenini bilinçli olarak kurar. İstikrarı önemser, uyuma yönelir ve ona ulaşmayı bilir. Doğası gereği protestoya eğilimli değildir.",
+          "5": "Böyle bir kişinin mutlu olmak için çok az şeye ihtiyacı vardır; eksikler olsa bile elindekini kolayca kabul eder. İstikrarı ve alışılmış düzeni sever. Gençlikte yeniliğe yönelebilir, ancak yaş aldıkça değişimden daha fazla korkmaya başlayabilir.",
+          "6+": "Kişi kendisinden ve hayatından o kadar memnundur ki çevresindeki dünyanın eksiklerini fark etmeyi bırakır. Ancak bu içsel iyi olma hissi zamanla durgunluğa ve kişisel gelişimin yavaşlamasına yol açabilir."
+        }
+      }
+    },
+    "columns": {
+      "column_1": {
+        "name": "Öz Değer / Kendine Bakış",
+        "numbers": "1-2-3",
+        "interpretations": {
+          "0-2": "Kişinin içinde yetersizlik hissi vardır: kendisini kötü, eksik ve en iyisine layık değilmiş gibi algılayabilir.",
+          "3": "Kişinin öz saygısı çok düşüktür: kendisini kötü, değersiz ve çekici olmayan biri gibi hissedebilir.",
+          "4": "Kişi kendisini yeterli ve çevresindekilerle eşit görür.",
+          "5": "Öz değer duygusu güçlüdür, ancak kendisinden beklentileri yüksek olduğu için özellikle hata ve başarısızlık anlarında kendinden memnuniyetsizlik yaşayabilir.",
+          "6+": "Aşırı şişmiş öz saygı, liderlik ve başkalarından üstün olma isteği; her ne pahasına olursa olsun en iyi olma arzusu. Bu durum kişinin hayattan içtenlikle keyif alma becerisini zayıflatabilir."
+        }
+      },
+      "column_2": {
+        "name": "Maddi Refah",
+        "numbers": "4-5-6",
+        "interpretations": {
+          "0": "Kaynakları etkili yönetmekte zorlanırsınız; bu nedenle istikrarlı bir maddi durum kurmak güçleşir ve kazanılanlar hızla harcanabilir.",
+          "1": "Para kişiye çok enerji alan ve az keyif veren ağır emekle gelir. Kaynaklar ortaya çıktığında ise hızla harcanır ve uzun süre kalıcı olmaz.",
+          "2": "Kişi büyük gelir getirmese bile hoşuna giden işleri seçer.",
+          "3": "Bu kişi için finansal tablo istikrarsızdır: iyi kazanç dönemleri tamamen durgun dönemlerle yer değiştirebilir, çünkü çalışma ritmi düzensizdir.",
+          "4": "Para yalnızca emek yoluyla değil, ek ve yan gelir kaynakları üzerinden de gelebilir.",
+          "5": "Para böyle bir kişiye çekilir: gelir kolay gelir ve kişi neredeyse yoktan kazanç yolu bulabilir.",
+          "6+": "Bu kişinin maddi hayatında tam bir öngörülemezlik olabilir: yüksek refah ve prestijli konum dönemleri bir anda işsizlik ve maddi zorluklarla yer değiştirebilir."
+        }
+      },
+      "column_3": {
+        "name": "Kendini Gerçekleştirme",
+        "numbers": "7-8-9",
+        "interpretations": {
+          "0-2": "Kişinin yeteneklerini ortaya çıkarması ve pratikte uygulaması kolay değildir.",
+          "3": "Kendini gerçekleştirme daha sınırlı ve uzmanlaşmış bir alanda mümkün olabilir.",
+          "4": "Çok yönlü yetenek, kişinin kendini birkaç yönde göstermesine ve başarı elde etmesine izin verir.",
+          "5": "Çok katmanlı yetenek, farklı yönlerde aynı anda sonuç alma ve kendini gerçekleştirme imkanı verir.",
+          "6+": "Olağanüstü güçlü yetenekler ve geniş potansiyel, kişinin yönler arasında dağılmasına ve uzun süre kendi yolunu belirleyememesine neden olabilir."
+        }
+      }
+    },
+    "diagonals": {
+      "descending_1_5_9": {
+        "name": "Ruhsal Diyagonal",
+        "description": "Kişide yüksek ideallerin ve ahlaki ilkelerin varlığını ya da yokluğunu gösterir."
+      },
+      "ascending_3_5_7": {
+        "name": "Dünyevi Diyagonal",
+        "description": "Kişinin gerçeklikte ne kadar sağlam durduğunu ve pratik hayatta nasıl yön bulduğunu gösterir."
+      },
+      "comparison_rules": [
+        {
+          "condition": "Her diyagonal <= 2 rakam",
+          "result": "Kişinin istikrarlı içsel yönelimleri zayıftır; ne ruhsal ilkeler ne de pratik beceriler yeterince oturmuştur. Bu nedenle hayatla baş etmekte zorlanabilir ve daha olgunlaşmamış bir kişilik gibi davranabilir."
+        },
+        {
+          "condition": "Her diyagonal >= 3 rakam VE fark <= 2",
+          "result": "Bu kişinin günlük hayatta takip ettiği içsel ahlaki yönelimleri ve yaşam ilkeleri vardır. Bunları davranışlarına yansıtabilir, bu da kendisiyle ve çevresiyle uyum içinde yaşamasına yardım eder."
+        },
+        {
+          "condition": "Diyagonal 1 < Diyagonal 2 (fark >= 3)",
+          "result": "Kişi günlük yaşamda kendini güvenli hisseder ve gerçek görevlerle kolayca başa çıkar; ancak kişisel değerleri ve ilkeleri yeterince gelişmemiş olabilir. Bu durum hayata fayda odaklı yaklaşma eğilimini gösterebilir."
+        },
+        {
+          "condition": "Diyagonal 2 < Diyagonal 1 (fark >= 3)",
+          "result": "Kişinin yüksek idealleri vardır, ancak bunlar gerçeklikten uzak kalabilir ve hayatta karşılık bulmakta zorlanabilir. Böyle bir durumda kişi kendi illüzyon dünyasında yaşayabilir ve gerçekliği olduğu gibi kabul etmekten kaçınabilir."
+        }
+      ]
+    }
+  }
+}

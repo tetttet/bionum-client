@@ -1,0 +1,110 @@
+{
+  "psychomatrix_interpretation": {
+    "rows": {
+      "row_1": {
+        "name": "Ability to Achieve Goals",
+        "numbers": "1-4-7",
+        "interpretations": {
+          "0": "The person does not formulate desires, build plans, or move toward results; they simply drift with the flow, allowing circumstances or other people to completely control their life.",
+          "1": "The person does not formulate goals for themselves, build plans, or move in any specific direction, fully allowing fate or others to determine what happens next.",
+          "2": "The person is capable of setting and achieving goals but does so cautiously: before acting, it is important for them to ensure the goal is feasible and that resources are truly sufficient.",
+          "3": "The person forms many intentions and tasks, but some turn out to be too ambitious or simply unrealistic for implementation.",
+          "4": "The person forms many goals and, in most cases, successfully realizes them.",
+          "5": "The person chooses large-scale goals and pursues them obsessively, sometimes forgetting about balance and not always choosing gentle methods.",
+          "6+": "Such a person has large-scale ambitions and grabs onto many directions at once; because of this fragmentation, they inevitably miss out on something."
+        }
+      },
+      "row_2": {
+        "name": "Ability to Create a Family",
+        "numbers": "2-5-8",
+        "interpretations": {
+          "0": "For this person, family is not a priority — they can live a full life without it.",
+          "1": "If they do enter into marriage, it is more often due to social expectations than internal need — in this case, family does not become a source of special joy or inspiration for them.",
+          "2": "Family is not a life priority for you: you either allow another to love you, make choices in favor of unsuitable partners, or enter relationships for pragmatic reasons.",
+          "3": "There is a desire to create a family, but doubts and fears prevent timely decisions, which often leads to late or difficult marriages.",
+          "4": "Family is one of your main values, and you do everything to create and preserve it.",
+          "5": "Family is your main support; without it, you feel incomplete. However, due to excessively high demands on a partner, there is a risk of missing good opportunities and remaining lonely for a long time.",
+          "6+": "An idealized perception of family and excessively high expectations of a partner often lead to disappointment and even a desire to choose solitude."
+        }
+      },
+      "row_3": {
+        "name": "Life Satisfaction",
+        "numbers": "3-6-9",
+        "interpretations": {
+          "0": "Such a person is constantly dissatisfied with something, rejects any proposals, and rarely agrees with anyone. An internal rebel who may protest for the sake of protest — their natural state is to go against the grain.",
+          "1": "This person is not satisfied with the established order. They strive to transform the surrounding reality and even the whole world, for which they are ready to put in any effort — both ordinary and beyond the limits of the possible.",
+          "2": "The person is restless, often experiences dissatisfaction, and is drawn to change; they are constantly searching for themselves but will only decide on radical steps in case of extreme necessity.",
+          "3": "Such a person knows how to live in harmony and value tranquility, but from time to time an internal protest wakes up in them, pushing them toward change. These bursts of dissatisfaction disturb their stability, and they deprive themselves of a sense of peace — only to strive for its return later.",
+          "4": "The person consciously forms a lifestyle for themselves that fully satisfies them. They value stability, strive for harmony, and know how to achieve it. By nature, they are not prone to protest.",
+          "5": "Such a person needs very little for happiness — they easily accept what they have, even if something is missing. They value stability and the familiar way of life. In youth, they are capable of striving for novelty, but with age, they begin to acutely fear any change.",
+          "6+": "The person is so satisfied with themselves and their life that they stop noticing the shortcomings of the surrounding world. However, this feeling of internal well-being eventually leads to stagnation and slows down their personal growth."
+        }
+      }
+    },
+    "columns": {
+      "column_1": {
+        "name": "Self-Esteem / Self-Regard",
+        "numbers": "1-2-3",
+        "interpretations": {
+          "0-2": "An internal sense of own inadequacy: the person feels they are bad and unworthy of the best.",
+          "3": "The person has very low self-esteem: they feel bad, unworthy, and unattractive.",
+          "4": "The person considers themselves fully adequate and equal to those around them.",
+          "5": "The sense of self-worth is strongly developed, but due to high demands on themselves, the person may be dissatisfied with themselves, especially in moments of mistakes or failures.",
+          "6+": "Extremely inflated self-esteem, a drive for leadership and superiority over others; a desire to be the best at any cost. Because of this, the person risks losing the ability to sincerely enjoy life."
+        }
+      },
+      "column_2": {
+        "name": "Material Well-being",
+        "numbers": "4-5-6",
+        "interpretations": {
+          "0": "You do not know how to effectively manage resources, which is why you cannot ensure a stable material state — everything earned is quickly spent.",
+          "1": "Money comes to the person through hard labor that takes a lot of energy and brings little pleasure. And when funds finally appear, they are quickly spent and do not stay for long.",
+          "2": "They choose activities they enjoy, even if they do not bring a large income.",
+          "3": "For such a person, the financial picture is unstable: periods of good earnings alternate with times of complete downtime because their work rhythm is inconsistent — they either work actively or stop activity altogether.",
+          "4": "Money comes not only through labor but also from additional, side sources of income.",
+          "5": "Money is drawn to such a person: income comes easily, and they are able to find ways to earn literally out of nothing.",
+          "6+": "Complete financial unpredictability reigns in such a person's life: periods of high prosperity and prestigious positions can suddenly alternate with unemployment and material difficulties — and so on in a circle."
+        }
+      },
+      "column_3": {
+        "name": "Self-Realization",
+        "numbers": "7-8-9",
+        "interpretations": {
+          "0-2": "It is not easy for the person to reveal and apply their abilities in practice.",
+          "3": "Self-realization is possible only in a limited, specialized sphere.",
+          "4": "Versatile giftedness, allowing one to manifest themselves and achieve success in several directions at once.",
+          "5": "Multifaceted talent, allowing for realization and achievement of results in different directions simultaneously.",
+          "6+": "Unusually strong talents and broad potential can lead to the person flitting between directions and being unable to determine their path for a long time."
+        }
+      }
+    },
+    "diagonals": {
+      "descending_1_5_9": {
+        "name": "Spiritual Diagonal",
+        "description": "Reflects the presence or absence of high ideals and moral principles in a person."
+      },
+      "ascending_3_5_7": {
+        "name": "Earthly Diagonal",
+        "description": "An indicator of how firmly a person stands on the ground and navigates reality."
+      },
+      "comparison_rules": [
+        {
+          "condition": "Each diagonal <= 2 digits",
+          "result": "The person is effectively devoid of stable internal orientations — neither spiritual principles nor practical skills — therefore they struggle to cope with life and behave more like an unformed, immature personality."
+        },
+        {
+          "condition": "Each diagonal >= 3 digits AND difference <= 2",
+          "result": "Such a person has internal moral orientations and life principles that they follow daily, successfully embodying them in their actions. This allows them to live in harmony with themselves and the surrounding world. Moreover, the more digits in both diagonals, the higher their ideals and the brighter and fuller they realize them in reality."
+        },
+        {
+          "condition": "Diagonal 1 < Diagonal 2 (difference >= 3)",
+          "result": "Such a person feels confident in everyday life and easily copes with real tasks; however, their own values and principles are insufficiently developed, so they rarely rely on them in their decisions. This often indicates a consumerist approach to life, where the priority is to extract benefit at any cost."
+        },
+        {
+          "condition": "Diagonal 2 < Diagonal 1 (difference >= 3)",
+          "result": "The person possesses lofty ideals, but they are far from reality and therefore do not find embodiment in life. In such a situation, one can say they live in a world of their own illusions and avoid accepting reality as it is."
+        }
+      ]
+    }
+  }
+}

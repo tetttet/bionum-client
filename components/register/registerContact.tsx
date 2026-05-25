@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
+import { fs } from "@/constants/typography";
 
 type RegisterContactProps = {
   name: string;
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 50,
-    fontSize: 16,
+    fontSize: fs(16),
     color: "#121212",
   },
 });

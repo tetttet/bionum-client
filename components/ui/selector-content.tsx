@@ -1,0 +1,198 @@
+import { BORDER_RADIUS } from "@/constants/params";
+import React, { useRef, useState } from "react";
+import {
+  Animated,
+  Dimensions,
+  Modal,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from "react-native";
+import CloseGlassButton from "./close-glass-button";
+import { fs } from "@/constants/typography";
+
+const { height } = Dimensions.get("window");
+
+export type SelectorItem = {
+  key: string;
+  title: string;
+  subtitle?: string;
+  content: React.ReactNode;
+};
+
+type SelectorContentProps = {
+  items: SelectorItem[];
+};
+
+const SelectorContent = ({ items }: SelectorContentProps) => {
+  const [activeItem, setActiveItem] = useState<SelectorItem | null>(null);
+  const slideAnim = useRef(new Animated.Value(height)).current;
+
+  const openModal = (item: SelectorItem) => {
+    setActiveItem(item);
+
+    Animated.timing(slideAnim, {
+      toValue: 0,
+      duration: 280,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const closeModal = () => {
+    Animated.timing(slideAnim, {
+      toValue: height,
+      duration: 240,
+      useNativeDriver: true,
+    }).start(() => {
+      setActiveItem(null);
+    });
+  };
+
+  return (
+    <View style={styles.container}>
+      {items.map((item) => (
+        <View key={item.key} style={[styles.itemButton, { marginBottom: 16 }]}>
+          <TouchableOpacity
+            key={item.key}
+            activeOpacity={0.8}
+            style={{ paddingHorizontal: 16 }}
+            onPress={() => openModal(item)}
+          >
+            <Text style={styles.title}>{item.title}</Text>
+            {item.subtitle && (
+              <Text style={styles.subtitle}>{item.subtitle}</Text>
+            )}
+          </TouchableOpacity>
+        </View>
+      ))}
+
+      <Modal
+        transparent
+        visible={!!activeItem}
+        animationType="none"
+        onRequestClose={closeModal}
+      >
+        {/* Backdrop */}
+        <TouchableOpacity
+          style={styles.backdrop}
+          activeOpacity={1}
+          onPress={closeModal}
+        />
+
+        {/* Bottom sheet */}
+        <Animated.View
+          style={[
+            styles.modalContainer,
+            { transform: [{ translateY: slideAnim }] },
+          ]}
+        >
+          {/* Handle */}
+          <View style={styles.handle} />
+
+          {/* Header */}
+          <View style={styles.modalHeader}>
+            {/* <Text style={styles.modalTitle}>{activeItem?.title}</Text> */}
+            <Text style={styles.modalTitle}></Text>
+            <CloseGlassButton closeSheet={closeModal} />
+          </View>
+
+          {/* Scrollable content */}
+          <ScrollView
+            style={styles.scroll}
+            contentContainerStyle={styles.scrollContent}
+            showsVerticalScrollIndicator={false}
+            bounces={false}
+            keyboardShouldPersistTaps="handled"
+          >
+            {activeItem?.content}
+          </ScrollView>
+        </Animated.View>
+      </Modal>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+
+  itemButton: {
+    width: "100%",
+    borderColor: "#e0e0e0",
+    borderWidth: 1,
+    backgroundColor: "#f5f5f5",
+    borderRadius: BORDER_RADIUS,
+    paddingVertical: 16,
+    marginBottom: 12,
+  },
+
+  title: {
+    fontSize: fs(17),
+    fontWeight: "600",
+    color: "#000",
+  },
+
+  subtitle: {
+    marginTop: 4,
+    fontSize: fs(14),
+    color: "#757575",
+  },
+
+  backdrop: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.35)",
+  },
+
+  modalContainer: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    maxHeight: height * 0.85,
+    backgroundColor: "#fff",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    paddingBottom: Platform.OS === "ios" ? 32 : 16,
+  },
+
+  handle: {
+    width: 40,
+    height: 4,
+    borderRadius: 2,
+    backgroundColor: "#ccc",
+    alignSelf: "center",
+    marginVertical: 8,
+  },
+
+  modalHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    paddingBottom: 12,
+  },
+
+  modalTitle: {
+    fontSize: fs(18),
+    fontWeight: "600",
+  },
+
+  closeText: {
+    fontSize: fs(15),
+    color: "#007AFF",
+  },
+
+  scroll: {
+    flex: 1,
+  },
+
+  scrollContent: {
+    paddingHorizontal: 20,
+    paddingBottom: 40,
+  },
+});
+
+export default SelectorContent;

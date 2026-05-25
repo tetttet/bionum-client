@@ -1,105 +1,103 @@
 import { Theme } from "@/constants/theme";
-import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { PortraitLang } from "@/data/dummy/portrait";
+import React, { useMemo } from "react";
+import { View } from "react-native";
+
 import HealthCards from "../cards/HealthCards";
-import SummaryScreen from "../screens/SummaryScreen";
-import StepCounter from "../steps/StepCounter";
+import CompaList from "../Compa/CompaList";
+import MatrixList from "../Matrix/MatrixList";
+import PredictionList from "../Prediction/PredictionList";
+import PsychoList from "../Psycho/PsychoList";
+import StepCircle from "../steps/StepCircle";
+import WeekDays from "../steps/WeekDays";
+import TabsContent, { TabItem } from "../ui/tab-content";
 
-const Tabs = ({ theme, useDark }: { theme: Theme; useDark: boolean }) => {
-  const [activeTab, setActiveTab] = useState<"tab1" | "tab2">("tab1");
+type HomeCardKey = "psycho" | "matrix" | "prediction" | "compa";
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.tabHeader}>
-        <TouchableOpacity
-          style={[styles.tabButton, activeTab === "tab1" && styles.activeTab]}
-          onPress={() => setActiveTab("tab1")}
-        >
-          <Text
-            style={[
-              styles.tabText,
-              activeTab === "tab1" && styles.activeTabText,
-            ]}
-          >
-            Главная
-          </Text>
-        </TouchableOpacity>
+export default function Tabs({
+  theme,
+  useDark,
+  lang,
+}: {
+  theme: Theme;
+  useDark: boolean;
+  lang: PortraitLang;
+}) {
+  let title = "Главная";
+  let stepsTitle = "Шагомер";
 
-        <TouchableOpacity
-          style={[styles.tabButton, activeTab === "tab2" && styles.activeTab]}
-          onPress={() => setActiveTab("tab2")}
-        >
-          <Text
-            style={[
-              styles.tabText,
-              activeTab === "tab2" && styles.activeTabText,
-            ]}
-          >
-            Шагомер
-          </Text>
-        </TouchableOpacity>
-      </View>
+  if (lang === "en") {
+    title = "Home";
+    stepsTitle = "Step Counter";
+  } else if (lang === "kz") {
+    title = "Басты бет";
+    stepsTitle = "Қадам санауыш";
+  } else if (lang === "tr") {
+    title = "Ana Sayfa";
+    stepsTitle = "Adım Sayacı";
+  }
 
-      <View>
-        {activeTab === "tab1" ? (
-          <>
-            {/* <SectionCard
-              theme={theme}
-              sectionLabel="MENTAL WELLBEING"
-              icon={<MaterialCommunityIcons name="brain" size={28} />}
-              title="Mental Health Questionnaire"
-              description="Along with regular reflection, assessing your current risk for common conditions can be an important part of caring for your mental health."
-              pillText="Take Questionnaire"
-            /> */}
-
-            <View style={{ height: 48 }} />
-
-            <SummaryScreen theme={theme} />
-          </>
-        ) : (
-          <>
-            <StepCounter theme={theme} />
-            <HealthCards theme={theme.healthCardTheme} useDark={useDark} />
-          </>
-        )}
-      </View>
-    </View>
+  const homeItems = useMemo(
+    () =>
+      [
+        { key: "psycho" as const },
+        { key: "matrix" as const },
+        { key: "prediction" as const },
+        { key: "compa" as const },
+      ] satisfies { key: HomeCardKey }[],
+    [],
   );
-};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  tabHeader: {
-    flexDirection: "row",
-    backgroundColor: "#0d0d0d",
+  const renderHomeItem = (item: { key: HomeCardKey }) => {
+    switch (item.key) {
+      case "psycho":
+        return <PsychoList theme={theme} />;
+      case "matrix":
+        return <MatrixList theme={theme} />;
+      case "prediction":
+        return <PredictionList theme={theme} />;
+      case "compa":
+        return <CompaList theme={theme} />;
+      default:
+        return null;
+    }
+  };
 
-    borderWidth: 1,
-    borderColor: "#181818",
-    borderRadius: 16,
+  const tabs: TabItem[] = [
+    {
+      key: "home",
+      title,
+      content: (
+        <View
+          style={{ paddingHorizontal: 24, paddingTop: 4, paddingBottom: 16 }}
+        >
+          <View style={{ flexDirection: "column", gap: 4, marginBottom: 4 }}>
+            <View style={{ flex: 1 }}>{renderHomeItem(homeItems[0])}</View>
+            <View style={{ flex: 1 }}>{renderHomeItem(homeItems[1])}</View>
+            <View style={{ flex: 1 }}>{renderHomeItem(homeItems[2])}</View>
+            <View style={{ flex: 1 }}>{renderHomeItem(homeItems[3])}</View>
+          </View>
+        </View>
+      ),
+    },
+    {
+      key: "steps",
+      title: stepsTitle,
+      content: (
+        <>
+          <StepCircle maxValue={10000} lang={lang} />
+          <WeekDays theme={theme} lang={lang} />
+          <View style={{ marginTop: -10 }}>
+            <HealthCards
+              theme={theme.healthCardTheme}
+              useDark={useDark}
+              lang={lang}
+            />
+          </View>
+        </>
+      ),
+    },
+  ];
 
-    marginHorizontal: 22,
-    marginBottom: 10,
-
-    overflow: "hidden",
-  },
-  tabButton: {
-    flex: 1,
-    paddingVertical: 12,
-    alignItems: "center",
-  },
-  tabText: {
-    fontSize: 16,
-    color: "#fff",
-  },
-  activeTab: {
-    backgroundColor: "#007AFF",
-  },
-  activeTabText: {
-    color: "#fff",
-    fontWeight: "600",
-  },
-});
-
-export default Tabs;
+  return <TabsContent tabs={tabs} theme={theme} useDark={useDark} />;
+}

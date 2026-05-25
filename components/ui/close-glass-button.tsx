@@ -1,31 +1,73 @@
-import React from "react";
-import {
-    Platform,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-} from "react-native";
+import React, { useRef } from "react";
+import { Animated, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { fs } from "@/constants/typography";
 
 const CloseGlassButton = ({ closeSheet }: { closeSheet: () => void }) => {
+  const pressAnim = useRef(new Animated.Value(0)).current;
+
+  const handlePressIn = () => {
+    Animated.spring(pressAnim, {
+      toValue: 1,
+      useNativeDriver: true,
+      friction: 8,
+      tension: 160,
+    }).start();
+  };
+
+  const handlePressOut = () => {
+    Animated.spring(pressAnim, {
+      toValue: 0,
+      useNativeDriver: true,
+      friction: 8,
+      tension: 140,
+    }).start();
+  };
+
+  const scaleX = pressAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [1, 1.06],
+  });
+
+  const scaleY = pressAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [1, 0.9],
+  });
+
+  // Чуть-чуть приглушаем содержимое при зажатии
+  const contentOpacity = pressAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [1, 0.75],
+  });
+
   return (
     <TouchableOpacity
       onPress={closeSheet}
+      onPressIn={handlePressIn}
+      onPressOut={handlePressOut}
       style={styles.closeButton}
       accessibilityRole="button"
       accessibilityLabel="Close"
+      activeOpacity={1}
     >
-      <View style={styles.closeInner}>
-        <Text style={styles.closeText}>✕</Text>
-      </View>
+      <Animated.View
+        style={[
+          styles.closeInner,
+          {
+            transform: [{ scaleX }, { scaleY }],
+            opacity: contentOpacity,
+          },
+        ]}
+      >
+        <Text style={styles.closeText}>x</Text>
+      </Animated.View>
     </TouchableOpacity>
   );
+  // return <></>;
 };
 
-// ---------- Styles (iOS-inspired rounded corners, soft shadows) ----------
+// ---------- Styles ----------
 const styles = StyleSheet.create({
   modalRoot: {
-    backgroundColor: "#fff",
     borderTopLeftRadius: 18,
     borderTopRightRadius: 18,
     overflow: "hidden",
@@ -33,28 +75,28 @@ const styles = StyleSheet.create({
   modalImage: { width: "100%", height: 220 },
   closeButton: {
     position: "absolute",
-    top: 12,
+    top: -10,
     right: 12,
+    left: 12,
+    zIndex: 10,
+    alignItems: "center",
+    bottom: 0,
     backgroundColor: "transparent",
   },
   closeInner: {
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: "white",
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: "rgba(255,255,255,0.75)",
     alignItems: "center",
     justifyContent: "center",
-    ...Platform.select({
-      ios: {
-        shadowColor: "#000",
-        shadowOpacity: 0.08,
-        shadowRadius: 6,
-        shadowOffset: { width: 0, height: 2 },
-      },
-      android: { elevation: 2 },
-    }),
   },
-  closeText: { fontSize: 18, fontWeight: "700" },
+  closeText: {
+    fontSize: fs(18),
+    fontWeight: "700",
+    color: "rgba(255,255,255,0.75)",
+  },
 });
 
 export default CloseGlassButton;

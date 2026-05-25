@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Animated,
   Dimensions,
+  Easing,
   Modal,
   PanResponder,
   ScrollView,
@@ -9,103 +10,177 @@ import {
   TouchableWithoutFeedback,
   View,
 } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const { height: SCREEN_H } = Dimensions.get("window");
+const HANDLE_AREA_HEIGHT = 44;
+const MAX_TOP_GAP = 12;
+const BACKDROP_OPACITY = 0.36;
 
 const BottomSheet = ({
   visible,
   onClose,
   children,
-  snapPoint = SCREEN_H * 0.85,
+  snapPoint = SCREEN_H * 0.95,
+  scrollEnabled = true,
+  handleBackgroundColor = "#FFFFFF",
+  handleMode = "inline",
+  handleColor = "rgba(16,24,40,0.18)",
 }: {
   visible: boolean;
   onClose: () => void;
   children: React.ReactNode;
   snapPoint?: number;
+  scrollEnabled?: boolean;
+  handleBackgroundColor?: string;
+  handleMode?: "inline" | "overlay" | "hidden";
+  handleColor?: string;
 }) => {
+  const insets = useSafeAreaInsets();
   const translateY = useRef(new Animated.Value(SCREEN_H)).current;
   const backdropOpacity = useRef(new Animated.Value(0)).current;
+  const [isMounted, setIsMounted] = useState(visible);
+  const onCloseRef = useRef(onClose);
+  const sheetHeight = useMemo(
+    () =>
+      Math.max(
+        320,
+        Math.min(snapPoint, SCREEN_H - Math.max(insets.top, MAX_TOP_GAP)),
+      ),
+    [insets.top, snapPoint],
+  );
+  const sheetHeightRef = useRef(sheetHeight);
+  const restingTranslateY = SCREEN_H - sheetHeight;
+  const restingTranslateYRef = useRef(restingTranslateY);
 
   useEffect(() => {
-    if (visible) {
+    onCloseRef.current = onClose;
+  }, [onClose]);
+
+  useEffect(() => {
+    sheetHeightRef.current = sheetHeight;
+  }, [sheetHeight]);
+
+  useEffect(() => {
+    restingTranslateYRef.current = restingTranslateY;
+  }, [restingTranslateY]);
+
+  const animateTo = useCallback(
+    (toValue: number, backdropValue: number, onDone?: () => void) => {
       Animated.parallel([
         Animated.timing(backdropOpacity, {
-          toValue: 0.5,
-          duration: 240,
+          toValue: backdropValue,
+          duration: 220,
+          easing: Easing.out(Easing.cubic),
           useNativeDriver: true,
         }),
         Animated.timing(translateY, {
-          toValue: SCREEN_H - snapPoint,
-          duration: 320,
-          useNativeDriver: true,
-        }),
-      ]).start();
-    } else {
-      Animated.parallel([
-        Animated.timing(backdropOpacity, {
-          toValue: 0,
-          duration: 200,
-          useNativeDriver: true,
-        }),
-        Animated.timing(translateY, {
-          toValue: SCREEN_H,
+          toValue,
           duration: 280,
+          easing: Easing.out(Easing.cubic),
           useNativeDriver: true,
         }),
       ]).start(({ finished }) => {
-        // nothing else
+        if (finished) {
+          onDone?.();
+        }
       });
-    }
-  }, [visible, translateY, backdropOpacity, snapPoint]);
+    },
+    [backdropOpacity, translateY],
+  );
 
-  // Dismiss
-  const pan = useRef({ y: 0 }).current;
+  const closeWithAnimation = useCallback(() => {
+    animateTo(SCREEN_H, 0, () => {
+      setIsMounted(false);
+      onCloseRef.current();
+    });
+  }, [animateTo]);
+
+  useEffect(() => {
+    if (visible) {
+      setIsMounted(true);
+      return;
+    }
+
+    if (!isMounted) {
+      return;
+    }
+
+    animateTo(SCREEN_H, 0, () => {
+      setIsMounted(false);
+    });
+  }, [animateTo, isMounted, visible]);
+
+  useEffect(() => {
+    if (!isMounted || !visible) {
+      return;
+    }
+
+    translateY.setValue(SCREEN_H);
+    backdropOpacity.setValue(0);
+
+    const frame = requestAnimationFrame(() => {
+      animateTo(restingTranslateY, BACKDROP_OPACITY);
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, [
+    animateTo,
+    backdropOpacity,
+    isMounted,
+    restingTranslateY,
+    translateY,
+    visible,
+  ]);
+
   const panResponder = useRef(
     PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
-      onMoveShouldSetPanResponder: () => true,
+      onStartShouldSetPanResponder: () => false,
+      onMoveShouldSetPanResponder: (_, gestureState) =>
+        gestureState.dy > 6 &&
+        Math.abs(gestureState.dy) > Math.abs(gestureState.dx),
+      onPanResponderGrant: () => {
+        translateY.stopAnimation();
+        backdropOpacity.stopAnimation();
+      },
       onPanResponderMove: (_, gestureState) => {
-        // only move downwards
         const dy = Math.max(0, gestureState.dy);
-        pan.y = dy;
-        translateY.setValue(SCREEN_H - snapPoint + dy);
+        const nextTranslate = restingTranslateYRef.current + dy;
+
+        translateY.setValue(nextTranslate);
+        backdropOpacity.setValue(
+          Math.max(0, BACKDROP_OPACITY * (1 - dy / sheetHeightRef.current)),
+        );
       },
       onPanResponderRelease: (_, gestureState) => {
-        const shouldClose = gestureState.dy > 120 || gestureState.vy > 1.2;
+        const shouldClose =
+          gestureState.dy > sheetHeightRef.current * 0.2 ||
+          gestureState.vy > 1.1;
+
         if (shouldClose) {
-          // animate out
-          Animated.parallel([
-            Animated.timing(backdropOpacity, {
-              toValue: 0,
-              duration: 180,
-              useNativeDriver: true,
-            }),
-            Animated.timing(translateY, {
-              toValue: SCREEN_H,
-              duration: 220,
-              useNativeDriver: true,
-            }),
-          ]).start(() => onClose());
+          closeWithAnimation();
         } else {
-          // snap back
-          Animated.timing(translateY, {
-            toValue: SCREEN_H - snapPoint,
-            duration: 180,
-            useNativeDriver: true,
-          }).start();
+          animateTo(restingTranslateYRef.current, BACKDROP_OPACITY);
         }
       },
-    })
+      onPanResponderTerminate: () => {
+        animateTo(restingTranslateYRef.current, BACKDROP_OPACITY);
+      },
+    }),
   ).current;
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <Modal
-      visible={visible}
+      visible={isMounted}
       animationType="none"
       transparent
-      onRequestClose={onClose}
+      onRequestClose={onCloseRef.current}
     >
-      <TouchableWithoutFeedback onPress={onClose}>
+      <TouchableWithoutFeedback onPress={onCloseRef.current}>
         <Animated.View
           style={[styles.backdrop, { opacity: backdropOpacity }]}
         />
@@ -115,21 +190,45 @@ const BottomSheet = ({
         style={[
           styles.sheet,
           {
-            height: snapPoint,
+            height: sheetHeight,
             transform: [{ translateY }],
           },
         ]}
       >
-        <View {...panResponder.panHandlers} style={styles.handleArea}>
-          <View style={styles.handle} />
-        </View>
+        {handleMode !== "hidden" ? (
+          <View
+            {...panResponder.panHandlers}
+            style={[
+              styles.handleArea,
+              handleMode === "overlay" && styles.handleAreaOverlay,
+              {
+                backgroundColor:
+                  handleMode === "overlay"
+                    ? "transparent"
+                    : handleBackgroundColor,
+              },
+            ]}
+          >
+            <View style={[styles.handle, { backgroundColor: handleColor }]} />
+          </View>
+        ) : null}
 
-        <ScrollView
-          contentContainerStyle={styles.sheetContent}
-          showsVerticalScrollIndicator={false}
-        >
-          {children}
-        </ScrollView>
+        {scrollEnabled ? (
+          <ScrollView
+            style={styles.scrollView}
+            contentContainerStyle={[
+              styles.sheetContent,
+              { paddingBottom: 24 + insets.bottom },
+            ]}
+            showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled"
+            bounces={false}
+          >
+            {children}
+          </ScrollView>
+        ) : (
+          <View style={styles.staticContent}>{children}</View>
+        )}
       </Animated.View>
     </Modal>
   );
@@ -151,17 +250,38 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    borderTopLeftRadius: 18,
-    borderTopRightRadius: 18,
+    borderTopLeftRadius: 28,
+    borderTopRightRadius: 28,
     overflow: "hidden",
-    backgroundColor: "transparent",
+    backgroundColor: "#FFFFFF",
   },
-  handleArea: { height: 36, alignItems: "center", justifyContent: "center" },
+  handleArea: {
+    height: HANDLE_AREA_HEIGHT,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  handleAreaOverlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 10,
+  },
   handle: {
     width: 48,
-    height: 6,
-    borderRadius: 6,
-    backgroundColor: "rgba(0,0,0,0.12)",
+    height: 5,
+    borderRadius: 999,
+    backgroundColor: "rgba(16,24,40,0.18)",
   },
-  sheetContent: { paddingBottom: 40 },
+  scrollView: {
+    flex: 1,
+  },
+  sheetContent: {
+    flexGrow: 1,
+    paddingBottom: 40,
+  },
+  staticContent: {
+    flex: 1,
+    minHeight: 0,
+  },
 });

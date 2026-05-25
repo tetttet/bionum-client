@@ -1,17 +1,19 @@
 import { Ionicons } from "@expo/vector-icons";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import { formatDateOnlyForDisplay } from "@/utils/_func";
 import React from "react";
+import { fs } from "@/constants/typography";
 import {
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 interface RegisterInfoProps {
-  dateOfBirth: Date | null;
-  setDateOfBirth: (date: Date | null) => void;
+  dateOfBirth: string;
+  pickerDate: Date;
   showDatePicker: boolean;
   setShowDatePicker: (show: boolean) => void;
   handleDateChange: (event: any, date?: Date | undefined) => void;
@@ -22,10 +24,12 @@ interface RegisterInfoProps {
   showPassword: boolean;
   setShowPassword: (show: boolean) => void;
   i18n: { t: (key: string) => string };
+  lang: string;
 }
 
 const RegisterInfo: React.FC<RegisterInfoProps> = ({
   dateOfBirth,
+  pickerDate,
   showDatePicker,
   setShowDatePicker,
   handleDateChange,
@@ -36,7 +40,16 @@ const RegisterInfo: React.FC<RegisterInfoProps> = ({
   showPassword,
   setShowPassword,
   i18n,
+  lang,
 }) => {
+  if (lang === "kz") {
+    lang = "kk";
+  }
+  const displayDate = dateOfBirth
+    ? formatDateOnlyForDisplay(dateOfBirth)
+    : i18n.t("dob");
+  const isPlaceholderDate = !dateOfBirth;
+
   return (
     <View>
       <View style={styles.inputContainer}>
@@ -52,22 +65,24 @@ const RegisterInfo: React.FC<RegisterInfoProps> = ({
         >
           <Text
             style={{
-              color: dateOfBirth ? "#121212" : "#8e8e93",
-              fontSize: 16,
+              color: isPlaceholderDate ? "#8e8e93" : "#121212",
+              fontSize: fs(16),
             }}
           >
-            {dateOfBirth ? dateOfBirth.toLocaleDateString() : i18n.t("dob")}
+            {displayDate}
           </Text>
         </TouchableOpacity>
       </View>
 
       {showDatePicker && (
         <DateTimePicker
-          value={dateOfBirth || new Date(2000, 0, 1)}
+          value={pickerDate}
           mode="date"
-          display="default"
+          display="spinner"
           maximumDate={new Date()}
           onChange={handleDateChange}
+          themeVariant="light"
+          locale={lang}
         />
       )}
 
@@ -134,7 +149,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 50,
-    fontSize: 16,
+    fontSize: fs(16),
     color: "#121212",
   },
 });

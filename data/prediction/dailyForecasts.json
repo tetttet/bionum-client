@@ -1,0 +1,370 @@
+{
+  "ru": {
+    "1": {
+      "label": "Число дня",
+      "energy": "Энергия Солнца",
+      "source": "Число дня 1 — Энергия Солнца\nСегодня день решительности и действий. Судьба проверяет вашу способность брать ответственность и идти вперед. Смело проявляйте инициативу, полагайтесь на себя — удача придет к тем, кто не боится действовать.\nСовет: не ждите одобрения — принимайте решения самостоятельно. День лидеров и победителей.",
+      "fallbacks": [
+        "Число дня 1 — Энергия Солнца\nСегодня день решительности и действий. Судьба проверяет вашу способность брать ответственность и идти вперед. Смело проявляйте инициативу, полагайтесь на себя — удача придет к тем, кто не боится действовать.\nСовет: не ждите одобрения — принимайте решения самостоятельно. День лидеров и победителей.",
+        "Число дня 1 — Энергия Солнца\nДень усиливает волю, смелость и желание начать первым. Сегодня важно не прятаться за чужими решениями, а самому выбрать направление и сделать шаг вперед.\nСовет: действуйте уверенно и не откладывайте важное. Удача поддержит тех, кто берет ответственность на себя.",
+        "Число дня 1 — Энергия Солнца\nСегодня энергия дня зовет к инициативе, ясности и самостоятельности. Хорошее время для решений, новых стартов и честного ответа себе: чего я действительно хочу?\nСовет: меньше сомнений, больше действий. Не ждите идеального момента — создайте его сами."
+      ]
+    },
+    "2": {
+      "label": "Число дня",
+      "energy": "Энергия Луны",
+      "source": "Число дня 2 — Энергия Луны\nДень мягких энергий, когда важно слушать себя и других. Поддержка, дипломатия и сотрудничество принесут больше, чем борьба. Отношения сегодня выходят на первый план.\nСовет: избегайте споров, проявляйте эмпатию, ищите баланс и компромисс. Этот день для объединения, а не соперничества.",
+      "fallbacks": [
+        "Число дня 2 — Энергия Луны\nДень мягких энергий, когда важно слушать себя и других. Поддержка, дипломатия и сотрудничество принесут больше, чем борьба. Отношения сегодня выходят на первый план.\nСовет: избегайте споров, проявляйте эмпатию, ищите баланс и компромисс. Этот день для объединения, а не соперничества.",
+        "Число дня 2 — Энергия Луны\nСегодня многое решается через такт, терпение и умение слышать. Не давите на события: мягкий разговор и верный союзник принесут больше результата, чем борьба.\nСовет: выбирайте мирный тон, берегите отношения и ищите решение, где выигрывают обе стороны.",
+        "Число дня 2 — Энергия Луны\nЭнергия дня раскрывается через доверие, поддержку и внутреннее спокойствие. Важные подсказки могут прийти через разговор, чувство или внимание к деталям.\nСовет: не спешите спорить. Сначала почувствуйте ситуацию, а потом делайте выводы."
+      ]
+    },
+    "3": {
+      "label": "Число дня",
+      "energy": "Энергия Самовыражения",
+      "source": "Число дня 3 — Энергия Самовыражения\nСегодня Вселенная даёт шанс заявить о себе. Проявите харизму, талант, вдохновение. Ваши идеи способны зажечь других — делитесь ими смело.\nСовет: не скрывайте свои способности, пусть мир узнает вас настоящего. День творчества, общения и уверенности в себе.",
+      "fallbacks": [
+        "Число дня 3 — Энергия Самовыражения\nСегодня Вселенная даёт шанс заявить о себе. Проявите харизму, талант, вдохновение. Ваши идеи способны зажечь других — делитесь ими смело.\nСовет: не скрывайте свои способности, пусть мир узнает вас настоящего. День творчества, общения и уверенности в себе.",
+        "Число дня 3 — Энергия Самовыражения\nСегодня день живого общения, вдохновения и ярких идей. Ваш голос может быть услышан особенно ясно, если говорить искренне и не бояться проявляться.\nСовет: покажите талант через дело, слово или творчество. Легкость сегодня открывает нужные двери.",
+        "Число дня 3 — Энергия Самовыражения\nЭнергия дня помогает раскрыться, привлечь внимание и вдохновить окружающих. Хорошее время для встреч, презентаций, творчества и теплых разговоров.\nСовет: не обесценивайте свои идеи. Даже маленькое проявление сегодня может дать большой отклик."
+      ]
+    },
+    "4": {
+      "label": "Число дня",
+      "energy": "Энергия Труда и Стабильности",
+      "source": "Число дня 4 — Энергия Труда и Стабильности\nДень требует сосредоточенности и дисциплины. Не всё пойдет легко, но терпение принесет плоды. Это время строить фундамент — не спешите, действуйте последовательно.\nСовет: сохраняйте спокойствие и порядок. Сделайте хотя бы один конкретный шаг к цели — он станет залогом будущего успеха.",
+      "fallbacks": [
+        "Число дня 4 — Энергия Труда и Стабильности\nДень требует сосредоточенности и дисциплины. Не всё пойдет легко, но терпение принесет плоды. Это время строить фундамент — не спешите, действуйте последовательно.\nСовет: сохраняйте спокойствие и порядок. Сделайте хотя бы один конкретный шаг к цели — он станет залогом будущего успеха.",
+        "Число дня 4 — Энергия Труда и Стабильности\nСегодня важно опираться на порядок, план и практичные решения. День может быть не самым быстрым, зато он помогает укрепить то, что должно служить долго.\nСовет: разберите дела по шагам и завершите хотя бы одно. Стабильность создается простыми действиями.",
+        "Число дня 4 — Энергия Труда и Стабильности\nЭнергия дня просит внимания к деталям, ответственности и терпения. Если действовать последовательно, даже сложная задача станет управляемой.\nСовет: не распыляйтесь. Выберите главное и доведите его до аккуратного результата."
+      ]
+    },
+    "5": {
+      "label": "Число дня",
+      "energy": "Энергия Перемен",
+      "source": "Число дня 5 — Энергия Перемен\nСегодня день неожиданностей. Возможны перемены, новые знакомства и идеи. Мир открывает двери, но нужно решиться войти.\nСовет: не сопротивляйтесь новому — даже если кажется, что всё идёт не по плану. Будьте гибкими, и перемены принесут удачу.",
+      "fallbacks": [
+        "Число дня 5 — Энергия Перемен\nСегодня день неожиданностей. Возможны перемены, новые знакомства и идеи. Мир открывает двери, но нужно решиться войти.\nСовет: не сопротивляйтесь новому — даже если кажется, что всё идёт не по плану. Будьте гибкими, и перемены принесут удачу.",
+        "Число дня 5 — Энергия Перемен\nДень приносит движение, свежие впечатления и шанс выйти за привычные рамки. Не всё будет идти по расписанию, но именно в этом может скрываться подарок.\nСовет: оставьте место для спонтанности. Гибкость сегодня сильнее жесткого контроля.",
+        "Число дня 5 — Энергия Перемен\nСегодня энергия обновления подталкивает к новым решениям, людям и маршрутам. То, что меняется, может вывести вас к более свободному варианту жизни.\nСовет: не цепляйтесь за старый сценарий. Сделайте шаг навстречу тому, что давно зовет."
+      ]
+    },
+    "6": {
+      "label": "Число дня",
+      "energy": "Энергия Любви и Заботы",
+      "source": "Число дня 6 — Энергия Любви и Заботы\nДень наполнен эмоциями и семейной теплотой. Хорошее время для общения с близкими, примирения, уюта и гармонии.\nСовет: уделите внимание дому, семье, отношениям. Ваши забота и доброта сегодня возвращаются сторицей.",
+      "fallbacks": [
+        "Число дня 6 — Энергия Любви и Заботы\nДень наполнен эмоциями и семейной теплотой. Хорошее время для общения с близкими, примирения, уюта и гармонии.\nСовет: уделите внимание дому, семье, отношениям. Ваши забота и доброта сегодня возвращаются сторицей.",
+        "Число дня 6 — Энергия Любви и Заботы\nСегодня день тепла, красоты и душевного равновесия. Отношения, дом и близкие люди могут стать главным источником силы и вдохновения.\nСовет: проявите заботу без давления. Маленький знак внимания сегодня способен многое исцелить.",
+        "Число дня 6 — Энергия Любви и Заботы\nЭнергия дня помогает восстановить гармонию, смягчить напряжение и почувствовать поддержку. Хорошее время для примирения, домашнего уюта и честного разговора.\nСовет: выбирайте доброту, но не забывайте о себе. Забота должна согревать, а не истощать."
+      ]
+    },
+    "7": {
+      "label": "Число дня",
+      "energy": "Энергия Погружения и Осознания",
+      "source": "Число дня 7 — Энергия Погружения и Осознания\nСегодня важно остановиться и прислушаться к себе. Это день внутреннего роста и размышлений. Ответы приходят не извне, а изнутри.\nСовет: не спешите. Практикуйте осознанность, займитесь самоанализом. Отпустите внешнее, чтобы услышать внутреннее.",
+      "fallbacks": [
+        "Число дня 7 — Энергия Погружения и Осознания\nСегодня важно остановиться и прислушаться к себе. Это день внутреннего роста и размышлений. Ответы приходят не извне, а изнутри.\nСовет: не спешите. Практикуйте осознанность, займитесь самоанализом. Отпустите внешнее, чтобы услышать внутреннее.",
+        "Число дня 7 — Энергия Погружения и Осознания\nДень подходит для тишины, анализа и честного разговора с собой. Не все ответы стоит искать в людях: сегодня сильнее работает интуиция.\nСовет: снизьте шум вокруг. Дайте себе время подумать, прежде чем принимать важные решения.",
+        "Число дня 7 — Энергия Погружения и Осознания\nСегодня энергия дня ведет внутрь: к смыслу, наблюдению и глубокому пониманию. Хорошо учиться, читать, завершать размышления и замечать тонкие знаки.\nСовет: не торопите события. Самое ценное откроется, когда вы перестанете суетиться."
+      ]
+    },
+    "8": {
+      "label": "Число дня",
+      "energy": "Энергия Успеха и Контроля",
+      "source": "Число дня 8 — Энергия Успеха и Контроля\nДень возможностей в финансах и делах. Вы можете добиться многого, если проявите настойчивость и рациональность.\nСовет: действуйте уверенно, но без излишней спешки. Это день для управления — день, когда вы сами создаёте результат.",
+      "fallbacks": [
+        "Число дня 8 — Энергия Успеха и Контроля\nДень возможностей в финансах и делах. Вы можете добиться многого, если проявите настойчивость и рациональность.\nСовет: действуйте уверенно, но без излишней спешки. Это день для управления — день, когда вы сами создаёте результат.",
+        "Число дня 8 — Энергия Успеха и Контроля\nСегодня усиливается тема результата, денег и личной силы. День помогает видеть цели трезво и принимать решения, которые влияют на будущее.\nСовет: держите фокус на главном. Управляйте ресурсами спокойно, без давления и суеты.",
+        "Число дня 8 — Энергия Успеха и Контроля\nЭнергия дня поддерживает амбиции, деловой подход и умение доводить начатое до результата. Возможны важные разговоры о работе, статусе или финансах.\nСовет: будьте настойчивы, но справедливы. Сила сегодня раскрывается через зрелое управление."
+      ]
+    },
+    "9": {
+      "label": "Число дня",
+      "energy": "Энергия Завершения",
+      "source": "Число дня 9 — Энергия Завершения\nСегодня важно подводить итоги, завершать старое и очищать пространство. Освободившись от лишнего, вы откроете дорогу новому циклу.\nСовет: не откладывайте — решайте накопившиеся вопросы. День очищения, прощения и осознанного завершения.",
+      "fallbacks": [
+        "Число дня 9 — Энергия Завершения\nСегодня важно подводить итоги, завершать старое и очищать пространство. Освободившись от лишнего, вы откроете дорогу новому циклу.\nСовет: не откладывайте — решайте накопившиеся вопросы. День очищения, прощения и осознанного завершения.",
+        "Число дня 9 — Энергия Завершения\nДень помогает отпустить лишнее, закрыть незавершенные дела и увидеть итог пройденного пути. Освобождение сегодня важнее накопления.\nСовет: завершите то, что давно забирает силы. Пространство для нового появится сразу после ясной точки.",
+        "Число дня 9 — Энергия Завершения\nСегодня энергия дня мягко подводит к очищению, прощению и внутренней зрелости. Хорошее время разобрать старые вопросы и вернуть себе легкость.\nСовет: не держитесь за прошлое из привычки. Поблагодарите опыт и сделайте шаг в новый цикл."
+      ]
+    }
+  },
+  "en": {
+    "1": {
+      "label": "Day number",
+      "energy": "Solar Energy",
+      "source": "Day number 1 — Solar Energy\nToday is a day of decisiveness and action. Life tests your ability to take responsibility and move forward. Show initiative, rely on yourself, and luck will come to those who are not afraid to act.\nAdvice: do not wait for approval — make your own decisions. This is a day for leaders and winners.",
+      "fallbacks": [
+        "Day number 1 — Solar Energy\nToday is a day of decisiveness and action. Life tests your ability to take responsibility and move forward. Show initiative, rely on yourself, and luck will come to those who are not afraid to act.\nAdvice: do not wait for approval — make your own decisions. This is a day for leaders and winners.",
+        "Day number 1 — Solar Energy\nThe day strengthens willpower, courage, and the desire to begin first. It is important to choose your direction yourself and take a clear step forward.\nAdvice: act with confidence and do not postpone what matters. Luck supports those who take responsibility.",
+        "Day number 1 — Solar Energy\nToday calls for initiative, clarity, and independence. It is a good moment for decisions, fresh starts, and an honest answer to what you truly want.\nAdvice: fewer doubts, more action. Do not wait for the perfect moment — create it."
+      ]
+    },
+    "2": {
+      "label": "Day number",
+      "energy": "Lunar Energy",
+      "source": "Day number 2 — Lunar Energy\nThis is a day of soft energy, when it is important to listen to yourself and others. Support, diplomacy, and cooperation will bring more than struggle. Relationships come to the foreground today.\nAdvice: avoid arguments, show empathy, and look for balance and compromise. This day is for unity, not rivalry.",
+      "fallbacks": [
+        "Day number 2 — Lunar Energy\nThis is a day of soft energy, when it is important to listen to yourself and others. Support, diplomacy, and cooperation will bring more than struggle. Relationships come to the foreground today.\nAdvice: avoid arguments, show empathy, and look for balance and compromise. This day is for unity, not rivalry.",
+        "Day number 2 — Lunar Energy\nToday many things are solved through tact, patience, and the ability to listen. A gentle conversation and the right ally may bring more progress than pressure.\nAdvice: choose a peaceful tone, protect relationships, and seek a solution where both sides can breathe.",
+        "Day number 2 — Lunar Energy\nThe day opens through trust, support, and inner calm. Important hints may come through a conversation, a feeling, or attention to small details.\nAdvice: do not rush into conflict. Feel the situation first, then make your move."
+      ]
+    },
+    "3": {
+      "label": "Day number",
+      "energy": "Energy of Self-Expression",
+      "source": "Day number 3 — Energy of Self-Expression\nToday the Universe gives you a chance to show yourself. Let your charisma, talent, and inspiration be seen. Your ideas can light others up, so share them boldly.\nAdvice: do not hide your abilities; let the world see the real you. A day of creativity, communication, and confidence.",
+      "fallbacks": [
+        "Day number 3 — Energy of Self-Expression\nToday the Universe gives you a chance to show yourself. Let your charisma, talent, and inspiration be seen. Your ideas can light others up, so share them boldly.\nAdvice: do not hide your abilities; let the world see the real you. A day of creativity, communication, and confidence.",
+        "Day number 3 — Energy of Self-Expression\nThis day favors lively communication, inspiration, and bright ideas. Your voice can be heard especially clearly when you speak sincerely.\nAdvice: show your talent through action, words, or creativity. Lightness can open the right doors today.",
+        "Day number 3 — Energy of Self-Expression\nThe day helps you open up, attract attention, and inspire others. It is a good time for meetings, presentations, creative work, and warm conversations.\nAdvice: do not undervalue your ideas. Even a small expression may receive a strong response."
+      ]
+    },
+    "4": {
+      "label": "Day number",
+      "energy": "Energy of Work and Stability",
+      "source": "Day number 4 — Energy of Work and Stability\nThe day asks for focus and discipline. Not everything will come easily, but patience will bear fruit. This is a time to build a foundation, so do not rush and move step by step.\nAdvice: keep calm and create order. Take at least one concrete step toward your goal; it will support future success.",
+      "fallbacks": [
+        "Day number 4 — Energy of Work and Stability\nThe day asks for focus and discipline. Not everything will come easily, but patience will bear fruit. This is a time to build a foundation, so do not rush and move step by step.\nAdvice: keep calm and create order. Take at least one concrete step toward your goal; it will support future success.",
+        "Day number 4 — Energy of Work and Stability\nToday it is important to rely on structure, planning, and practical choices. The day may not be fast, but it helps strengthen what should last.\nAdvice: break tasks into steps and complete at least one. Stability is built through simple actions.",
+        "Day number 4 — Energy of Work and Stability\nThe energy of the day asks for attention to detail, responsibility, and patience. If you move consistently, even a difficult task becomes manageable.\nAdvice: do not scatter your energy. Choose the main thing and bring it to a clean result."
+      ]
+    },
+    "5": {
+      "label": "Day number",
+      "energy": "Energy of Change",
+      "source": "Day number 5 — Energy of Change\nToday is a day of surprises. Changes, new acquaintances, and fresh ideas are possible. The world opens doors, but you must decide to enter.\nAdvice: do not resist the new, even if things seem to go off plan. Stay flexible, and change will bring luck.",
+      "fallbacks": [
+        "Day number 5 — Energy of Change\nToday is a day of surprises. Changes, new acquaintances, and fresh ideas are possible. The world opens doors, but you must decide to enter.\nAdvice: do not resist the new, even if things seem to go off plan. Stay flexible, and change will bring luck.",
+        "Day number 5 — Energy of Change\nThe day brings movement, fresh impressions, and a chance to step beyond the familiar. Not everything may follow the schedule, but the gift may be hidden there.\nAdvice: leave room for spontaneity. Flexibility is stronger than rigid control today.",
+        "Day number 5 — Energy of Change\nToday the energy of renewal pushes you toward new decisions, people, and routes. What changes now may lead you to a freer version of life.\nAdvice: do not cling to the old script. Take a step toward what has been calling you."
+      ]
+    },
+    "6": {
+      "label": "Day number",
+      "energy": "Energy of Love and Care",
+      "source": "Day number 6 — Energy of Love and Care\nThe day is filled with emotion and family warmth. It is a good time for communication with loved ones, reconciliation, comfort, and harmony.\nAdvice: give attention to home, family, and relationships. Your care and kindness return to you many times over today.",
+      "fallbacks": [
+        "Day number 6 — Energy of Love and Care\nThe day is filled with emotion and family warmth. It is a good time for communication with loved ones, reconciliation, comfort, and harmony.\nAdvice: give attention to home, family, and relationships. Your care and kindness return to you many times over today.",
+        "Day number 6 — Energy of Love and Care\nToday is a day of warmth, beauty, and emotional balance. Relationships, home, and close people can become your main source of strength.\nAdvice: show care without pressure. A small sign of attention can heal more than you expect.",
+        "Day number 6 — Energy of Love and Care\nThe day helps restore harmony, soften tension, and feel supported. It is a good moment for reconciliation, home comfort, and an honest conversation.\nAdvice: choose kindness, but remember yourself too. Care should warm you, not drain you."
+      ]
+    },
+    "7": {
+      "label": "Day number",
+      "energy": "Energy of Immersion and Awareness",
+      "source": "Day number 7 — Energy of Immersion and Awareness\nToday it is important to pause and listen to yourself. This is a day of inner growth and reflection. Answers come not from outside, but from within.\nAdvice: do not rush. Practice awareness and self-analysis. Let go of the outer noise to hear the inner voice.",
+      "fallbacks": [
+        "Day number 7 — Energy of Immersion and Awareness\nToday it is important to pause and listen to yourself. This is a day of inner growth and reflection. Answers come not from outside, but from within.\nAdvice: do not rush. Practice awareness and self-analysis. Let go of the outer noise to hear the inner voice.",
+        "Day number 7 — Energy of Immersion and Awareness\nThe day suits silence, analysis, and an honest conversation with yourself. Not every answer should be searched for in other people; intuition works stronger today.\nAdvice: lower the noise around you. Give yourself time to think before making important decisions.",
+        "Day number 7 — Energy of Immersion and Awareness\nToday the energy leads inward, toward meaning, observation, and deeper understanding. It is good to study, read, finish reflections, and notice subtle signs.\nAdvice: do not force events. The most valuable thing appears when you stop rushing."
+      ]
+    },
+    "8": {
+      "label": "Day number",
+      "energy": "Energy of Success and Control",
+      "source": "Day number 8 — Energy of Success and Control\nThis is a day of opportunities in finances and business. You can achieve a lot if you show persistence and rationality.\nAdvice: act confidently, but without unnecessary haste. This is a day for management, a day when you create the result yourself.",
+      "fallbacks": [
+        "Day number 8 — Energy of Success and Control\nThis is a day of opportunities in finances and business. You can achieve a lot if you show persistence and rationality.\nAdvice: act confidently, but without unnecessary haste. This is a day for management, a day when you create the result yourself.",
+        "Day number 8 — Energy of Success and Control\nToday highlights results, money, and personal power. The day helps you see goals clearly and make choices that affect the future.\nAdvice: keep your focus on what matters. Manage resources calmly, without pressure or rush.",
+        "Day number 8 — Energy of Success and Control\nThe energy of the day supports ambition, business thinking, and the ability to complete what you started. Important talks about work, status, or finances are possible.\nAdvice: be persistent, but fair. Strength reveals itself through mature leadership today."
+      ]
+    },
+    "9": {
+      "label": "Day number",
+      "energy": "Energy of Completion",
+      "source": "Day number 9 — Energy of Completion\nToday it is important to sum things up, finish the old, and clear your space. Once you release what is unnecessary, you open the way to a new cycle.\nAdvice: do not postpone accumulated questions. This is a day of cleansing, forgiveness, and conscious completion.",
+      "fallbacks": [
+        "Day number 9 — Energy of Completion\nToday it is important to sum things up, finish the old, and clear your space. Once you release what is unnecessary, you open the way to a new cycle.\nAdvice: do not postpone accumulated questions. This is a day of cleansing, forgiveness, and conscious completion.",
+        "Day number 9 — Energy of Completion\nThe day helps you release the unnecessary, close unfinished matters, and see the result of the path already taken. Liberation is more important than accumulation today.\nAdvice: finish what has been draining your strength. Space for the new appears after a clear ending.",
+        "Day number 9 — Energy of Completion\nToday gently leads you toward cleansing, forgiveness, and inner maturity. It is a good time to sort out old questions and return to lightness.\nAdvice: do not hold on to the past out of habit. Thank the experience and step into a new cycle."
+      ]
+    }
+  },
+  "kz": {
+    "1": {
+      "label": "Күн саны",
+      "energy": "Күн энергиясы",
+      "source": "Күн саны 1 — Күн энергиясы\nБүгін батыл шешім мен әрекет күні. Тағдыр сіздің жауапкершілік алып, алға жүру қабілетіңізді тексереді. Бастаманы өз қолыңызға алып, өзіңізге сеніңіз — сәттілік әрекеттен қорықпайтындарға келеді.\nКеңес: мақұлдауды күтпеңіз — шешімді өзіңіз қабылдаңыз. Бұл көшбасшылар мен жеңімпаздардың күні.",
+      "fallbacks": [
+        "Күн саны 1 — Күн энергиясы\nБүгін батыл шешім мен әрекет күні. Тағдыр сіздің жауапкершілік алып, алға жүру қабілетіңізді тексереді. Бастаманы өз қолыңызға алып, өзіңізге сеніңіз — сәттілік әрекеттен қорықпайтындарға келеді.\nКеңес: мақұлдауды күтпеңіз — шешімді өзіңіз қабылдаңыз. Бұл көшбасшылар мен жеңімпаздардың күні.",
+        "Күн саны 1 — Күн энергиясы\nБұл күн ерік-жігерді, батылдықты және бірінші қадам жасау ниетін күшейтеді. Өз бағытыңызды өзіңіз таңдап, нақты әрекетке көшкен дұрыс.\nКеңес: сенімді болыңыз және маңызды істі кейінге қалдырмаңыз. Жауапкершілік алған адамға жол ашылады.",
+        "Күн саны 1 — Күн энергиясы\nБүгінгі энергия бастамаға, айқындыққа және дербестікке шақырады. Жаңа бастауға, шешім қабылдауға және өз қалауыңызды анық көруге жақсы уақыт.\nКеңес: күмәнді азайтып, әрекетті көбейтіңіз. Мінсіз сәтті күтпей, оны өзіңіз жасаңыз."
+      ]
+    },
+    "2": {
+      "label": "Күн саны",
+      "energy": "Ай энергиясы",
+      "source": "Күн саны 2 — Ай энергиясы\nБұл жұмсақ энергия күні, сондықтан өзіңізді де, өзгелерді де тыңдау маңызды. Қолдау, дипломатия және ынтымақтастық күрестен көбірек нәтиже береді. Бүгін қарым-қатынас бірінші орынға шығады.\nКеңес: даудан аулақ болыңыз, эмпатия танытыңыз, тепе-теңдік пен ымыра іздеңіз. Бұл күн бірігуге арналған, бәсекеге емес.",
+      "fallbacks": [
+        "Күн саны 2 — Ай энергиясы\nБұл жұмсақ энергия күні, сондықтан өзіңізді де, өзгелерді де тыңдау маңызды. Қолдау, дипломатия және ынтымақтастық күрестен көбірек нәтиже береді. Бүгін қарым-қатынас бірінші орынға шығады.\nКеңес: даудан аулақ болыңыз, эмпатия танытыңыз, тепе-теңдік пен ымыра іздеңіз. Бұл күн бірігуге арналған, бәсекеге емес.",
+        "Күн саны 2 — Ай энергиясы\nБүгін көп нәрсе сабыр, әдеп және тыңдай білу арқылы шешіледі. Жұмсақ әңгіме мен дұрыс одақтас қысымнан да пайдалы болуы мүмкін.\nКеңес: тыныш үнді таңдаңыз, қарым-қатынасты сақтаңыз және екі жаққа да қолайлы шешім іздеңіз.",
+        "Күн саны 2 — Ай энергиясы\nКүннің энергиясы сенім, қолдау және ішкі тыныштық арқылы ашылады. Маңызды белгі әңгімеден, сезімнен немесе ұсақ детальдан келуі мүмкін.\nКеңес: дауласуға асықпаңыз. Алдымен жағдайды сезініңіз, содан кейін шешім қабылдаңыз."
+      ]
+    },
+    "3": {
+      "label": "Күн саны",
+      "energy": "Өзін көрсету энергиясы",
+      "source": "Күн саны 3 — Өзін көрсету энергиясы\nБүгін Ғалам өзіңізді көрсетуге мүмкіндік береді. Харизмаңызды, талантыңызды және шабытты ашыңыз. Идеяларыңыз өзгелерді жігерлендіре алады — олармен батыл бөлісіңіз.\nКеңес: қабілетіңізді жасырмаңыз, әлем сіздің шынайы болмысыңызды көрсін. Бұл шығармашылық, қарым-қатынас және өзіңізге сену күні.",
+      "fallbacks": [
+        "Күн саны 3 — Өзін көрсету энергиясы\nБүгін Ғалам өзіңізді көрсетуге мүмкіндік береді. Харизмаңызды, талантыңызды және шабытты ашыңыз. Идеяларыңыз өзгелерді жігерлендіре алады — олармен батыл бөлісіңіз.\nКеңес: қабілетіңізді жасырмаңыз, әлем сіздің шынайы болмысыңызды көрсін. Бұл шығармашылық, қарым-қатынас және өзіңізге сену күні.",
+        "Күн саны 3 — Өзін көрсету энергиясы\nБүгін тірі қарым-қатынас, шабыт және жарқын ойлар күні. Шынайы сөйлесеңіз, дауысыңыз анық естіледі.\nКеңес: талантыңызды іс, сөз немесе шығармашылық арқылы көрсетіңіз. Жеңілдік бүгін дұрыс есіктерді ашады.",
+        "Күн саны 3 — Өзін көрсету энергиясы\nБұл күн ашылуға, назар аудартуға және айналаңызға шабыт беруге көмектеседі. Кездесу, таныстыру, шығармашылық жұмыс және жылы әңгіме үшін қолайлы уақыт.\nКеңес: идеяларыңызды төмен бағаламаңыз. Кішкентай көріністің өзі үлкен жауап әкелуі мүмкін."
+      ]
+    },
+    "4": {
+      "label": "Күн саны",
+      "energy": "Еңбек пен тұрақтылық энергиясы",
+      "source": "Күн саны 4 — Еңбек пен тұрақтылық энергиясы\nКүн жинақылық пен тәртіпті талап етеді. Барлығы оңай болмауы мүмкін, бірақ шыдамдылық жемісін береді. Бұл іргетас қалау уақыты — асықпаңыз, бірізді әрекет етіңіз.\nКеңес: сабыр мен тәртіпті сақтаңыз. Мақсатыңызға қарай кемінде бір нақты қадам жасаңыз — ол болашақ табыстың негізі болады.",
+      "fallbacks": [
+        "Күн саны 4 — Еңбек пен тұрақтылық энергиясы\nКүн жинақылық пен тәртіпті талап етеді. Барлығы оңай болмауы мүмкін, бірақ шыдамдылық жемісін береді. Бұл іргетас қалау уақыты — асықпаңыз, бірізді әрекет етіңіз.\nКеңес: сабыр мен тәртіпті сақтаңыз. Мақсатыңызға қарай кемінде бір нақты қадам жасаңыз — ол болашақ табыстың негізі болады.",
+        "Күн саны 4 — Еңбек пен тұрақтылық энергиясы\nБүгін жоспарға, құрылымға және практикалық шешімге сүйену маңызды. Күн жылдам болмауы мүмкін, бірақ ұзаққа қызмет ететін нәрсені нығайтады.\nКеңес: істерді қадамдарға бөліп, кемінде біреуін аяқтаңыз. Тұрақтылық қарапайым әрекеттен құралады.",
+        "Күн саны 4 — Еңбек пен тұрақтылық энергиясы\nКүннің энергиясы детальға мұқият болуды, жауапкершілікті және шыдамды талап етеді. Бірізді жүрсеңіз, күрделі істің өзі басқарылатын болады.\nКеңес: энергияңызды шашпаңыз. Негізгі істі таңдап, оны таза нәтижеге жеткізіңіз."
+      ]
+    },
+    "5": {
+      "label": "Күн саны",
+      "energy": "Өзгеріс энергиясы",
+      "source": "Күн саны 5 — Өзгеріс энергиясы\nБүгін күтпеген оқиғалар күні. Өзгерістер, жаңа таныстықтар мен тың идеялар болуы мүмкін. Әлем есік ашады, бірақ оған кіруге өзіңіз шешім қабылдауыңыз керек.\nКеңес: жаңалыққа қарсыласпаңыз — бәрі жоспардан тыс болып көрінсе де. Икемді болыңыз, сонда өзгеріс сәттілік әкеледі.",
+      "fallbacks": [
+        "Күн саны 5 — Өзгеріс энергиясы\nБүгін күтпеген оқиғалар күні. Өзгерістер, жаңа таныстықтар мен тың идеялар болуы мүмкін. Әлем есік ашады, бірақ оған кіруге өзіңіз шешім қабылдауыңыз керек.\nКеңес: жаңалыққа қарсыласпаңыз — бәрі жоспардан тыс болып көрінсе де. Икемді болыңыз, сонда өзгеріс сәттілік әкеледі.",
+        "Күн саны 5 — Өзгеріс энергиясы\nКүн қозғалыс, жаңа әсер және үйреншікті шеңберден шығу мүмкіндігін береді. Барлығы кесте бойынша жүрмеуі мүмкін, бірақ сый дәл сонда жасырынуы ықтимал.\nКеңес: тосындыққа орын қалдырыңыз. Бүгін икемділік қатаң бақылаудан күштірек.",
+        "Күн саны 5 — Өзгеріс энергиясы\nБүгін жаңару энергиясы жаңа шешімдерге, адамдарға және бағыттарға итермелейді. Қазір өзгеріп жатқан нәрсе сізді еркінірек өмірге алып баруы мүмкін.\nКеңес: ескі сценарийге жабыспаңыз. Ішіңізден шақырып тұрған нәрсеге бір қадам жасаңыз."
+      ]
+    },
+    "6": {
+      "label": "Күн саны",
+      "energy": "Махаббат пен қамқорлық энергиясы",
+      "source": "Күн саны 6 — Махаббат пен қамқорлық энергиясы\nКүн эмоцияға және отбасылық жылуға толы. Жақындармен сөйлесуге, татуласуға, үй жайлылығы мен үйлесімге жақсы уақыт.\nКеңес: үйге, отбасыға және қарым-қатынасқа көңіл бөліңіз. Бүгінгі қамқорлығыңыз бен мейіріміңіз еселеп қайтады.",
+      "fallbacks": [
+        "Күн саны 6 — Махаббат пен қамқорлық энергиясы\nКүн эмоцияға және отбасылық жылуға толы. Жақындармен сөйлесуге, татуласуға, үй жайлылығы мен үйлесімге жақсы уақыт.\nКеңес: үйге, отбасыға және қарым-қатынасқа көңіл бөліңіз. Бүгінгі қамқорлығыңыз бен мейіріміңіз еселеп қайтады.",
+        "Күн саны 6 — Махаббат пен қамқорлық энергиясы\nБүгін жылулық, әдемілік және жан тыныштығы күні. Қарым-қатынас, үй және жақын адамдар негізгі күш көзіне айналуы мүмкін.\nКеңес: қамқорлықты қысымсыз көрсетіңіз. Кішкентай көңіл бөлу көп нәрсені емдеуі мүмкін.",
+        "Күн саны 6 — Махаббат пен қамқорлық энергиясы\nКүннің энергиясы үйлесімді қалпына келтіруге, шиеленісті жұмсартуға және қолдауды сезінуге көмектеседі. Татуласу, үй жайлылығы және ашық әңгіме үшін жақсы уақыт.\nКеңес: мейірімді таңдаңыз, бірақ өзіңізді де ұмытпаңыз. Қамқорлық жылытуы керек, шаршатпауы керек."
+      ]
+    },
+    "7": {
+      "label": "Күн саны",
+      "energy": "Ішке үңілу және сана энергиясы",
+      "source": "Күн саны 7 — Ішке үңілу және сана энергиясы\nБүгін тоқтап, өзіңізді тыңдау маңызды. Бұл ішкі өсу мен ойлану күні. Жауап сырттан емес, ішіңізден келеді.\nКеңес: асықпаңыз. Саналылықты тәжірибе етіп, өзіңізді талдаңыз. Сыртқы шуды босатып, ішкі дауысты естіңіз.",
+      "fallbacks": [
+        "Күн саны 7 — Ішке үңілу және сана энергиясы\nБүгін тоқтап, өзіңізді тыңдау маңызды. Бұл ішкі өсу мен ойлану күні. Жауап сырттан емес, ішіңізден келеді.\nКеңес: асықпаңыз. Саналылықты тәжірибе етіп, өзіңізді талдаңыз. Сыртқы шуды босатып, ішкі дауысты естіңіз.",
+        "Күн саны 7 — Ішке үңілу және сана энергиясы\nБұл күн тыныштыққа, талдауға және өзіңізбен адал әңгімеге қолайлы. Барлық жауапты адамдардан іздеудің қажеті жоқ — бүгін интуиция күштірек.\nКеңес: айналадағы шуды азайтыңыз. Маңызды шешім алдында ойлануға уақыт беріңіз.",
+        "Күн саны 7 — Ішке үңілу және сана энергиясы\nБүгін энергия ішке, мағынаға және терең түсінікке жетелейді. Оқу, кітап оқу, ойды аяқтау және нәзік белгілерді байқау үшін жақсы уақыт.\nКеңес: оқиғаны күштемеңіз. Ең құнды жауап асықпаған кезде ашылады."
+      ]
+    },
+    "8": {
+      "label": "Күн саны",
+      "energy": "Табыс пен басқару энергиясы",
+      "source": "Күн саны 8 — Табыс пен басқару энергиясы\nҚаржы мен істерде мүмкіндік күні. Табандылық пен ақылға сүйенсеңіз, көп нәрсеге қол жеткізе аласыз.\nКеңес: сенімді әрекет етіңіз, бірақ артық асықпаңыз. Бұл басқару күні — нәтижені өзіңіз жасайтын күн.",
+      "fallbacks": [
+        "Күн саны 8 — Табыс пен басқару энергиясы\nҚаржы мен істерде мүмкіндік күні. Табандылық пен ақылға сүйенсеңіз, көп нәрсеге қол жеткізе аласыз.\nКеңес: сенімді әрекет етіңіз, бірақ артық асықпаңыз. Бұл басқару күні — нәтижені өзіңіз жасайтын күн.",
+        "Күн саны 8 — Табыс пен басқару энергиясы\nБүгін нәтиже, ақша және жеке күш тақырыбы күшейеді. Күн мақсатты анық көріп, болашаққа әсер ететін шешім қабылдауға көмектеседі.\nКеңес: назарыңызды басты нәрседе ұстаңыз. Ресурсты сабырмен, қысымсыз басқарыңыз.",
+        "Күн саны 8 — Табыс пен басқару энергиясы\nКүннің энергиясы амбицияны, іскер ойды және бастаған істі нәтижеге жеткізуді қолдайды. Жұмыс, мәртебе немесе қаржы туралы маңызды әңгіме болуы мүмкін.\nКеңес: табанды болыңыз, бірақ әділдікті сақтаңыз. Күш бүгін кемел басқару арқылы ашылады."
+      ]
+    },
+    "9": {
+      "label": "Күн саны",
+      "energy": "Аяқталу энергиясы",
+      "source": "Күн саны 9 — Аяқталу энергиясы\nБүгін қорытынды жасап, ескіні аяқтап, кеңістікті тазарту маңызды. Артық нәрседен босасаңыз, жаңа циклге жол ашылады.\nКеңес: кейінге қалдырмаңыз — жиналған сұрақтарды шешіңіз. Бұл тазару, кешіру және саналы аяқтау күні.",
+      "fallbacks": [
+        "Күн саны 9 — Аяқталу энергиясы\nБүгін қорытынды жасап, ескіні аяқтап, кеңістікті тазарту маңызды. Артық нәрседен босасаңыз, жаңа циклге жол ашылады.\nКеңес: кейінге қалдырмаңыз — жиналған сұрақтарды шешіңіз. Бұл тазару, кешіру және саналы аяқтау күні.",
+        "Күн саны 9 — Аяқталу энергиясы\nКүн артықты жіберуге, аяқталмаған істерді жабуға және өткен жолдың нәтижесін көруге көмектеседі. Бүгін жинаудан гөрі босану маңызды.\nКеңес: күшіңізді алып жүрген істі аяқтаңыз. Жаңаға орын нақты нүктеден кейін ашылады.",
+        "Күн саны 9 — Аяқталу энергиясы\nБүгінгі энергия тазаруға, кешіруге және ішкі кемелдікке жұмсақ жетелейді. Ескі сұрақтарды реттеп, жеңілдікке оралуға жақсы уақыт.\nКеңес: өткенге әдетпен жабыспаңыз. Тәжірибеге алғыс айтып, жаңа циклге қадам жасаңыз."
+      ]
+    }
+  },
+  "tr": {
+    "1": {
+      "label": "Günün sayısı",
+      "energy": "Güneş Enerjisi",
+      "source": "Günün sayısı 1 — Güneş Enerjisi\nBugün kararlılık ve eylem günü. Kader, sorumluluk alma ve ileri gitme yeteneğinizi sınar. İnisiyatif gösterin, kendinize güvenin; şans, harekete geçmekten korkmayanlara gelir.\nÖneri: onay beklemeyin — kararları kendi başınıza alın. Bu, liderlerin ve kazananların günüdür.",
+      "fallbacks": [
+        "Günün sayısı 1 — Güneş Enerjisi\nBugün kararlılık ve eylem günü. Kader, sorumluluk alma ve ileri gitme yeteneğinizi sınar. İnisiyatif gösterin, kendinize güvenin; şans, harekete geçmekten korkmayanlara gelir.\nÖneri: onay beklemeyin — kararları kendi başınıza alın. Bu, liderlerin ve kazananların günüdür.",
+        "Günün sayısı 1 — Güneş Enerjisi\nBugün irade, cesaret ve ilk adımı atma isteği güçlenir. Başkalarının kararlarının arkasına saklanmadan kendi yönünüzü seçmeniz önemlidir.\nÖneri: güvenle hareket edin ve önemli olanı ertelemeyin. Şans, sorumluluk alan kişiyi destekler.",
+        "Günün sayısı 1 — Güneş Enerjisi\nGünün enerjisi inisiyatife, netliğe ve bağımsızlığa çağırıyor. Yeni başlangıçlar, kararlar ve gerçekten ne istediğinizi görmek için güçlü bir zaman.\nÖneri: daha az şüphe, daha çok eylem. Mükemmel anı beklemeyin — onu kendiniz yaratın."
+      ]
+    },
+    "2": {
+      "label": "Günün sayısı",
+      "energy": "Ay Enerjisi",
+      "source": "Günün sayısı 2 — Ay Enerjisi\nYumuşak enerjilerin günü; kendinizi ve başkalarını dinlemek önemlidir. Destek, diplomasi ve iş birliği mücadeleden daha fazlasını getirir. Bugün ilişkiler ön plana çıkar.\nÖneri: tartışmalardan kaçının, empati gösterin, denge ve uzlaşma arayın. Bu gün rekabet için değil, birleşmek içindir.",
+      "fallbacks": [
+        "Günün sayısı 2 — Ay Enerjisi\nYumuşak enerjilerin günü; kendinizi ve başkalarını dinlemek önemlidir. Destek, diplomasi ve iş birliği mücadeleden daha fazlasını getirir. Bugün ilişkiler ön plana çıkar.\nÖneri: tartışmalardan kaçının, empati gösterin, denge ve uzlaşma arayın. Bu gün rekabet için değil, birleşmek içindir.",
+        "Günün sayısı 2 — Ay Enerjisi\nBugün birçok şey incelik, sabır ve dinleme becerisiyle çözülür. Nazik bir konuşma ve doğru bir müttefik, baskıdan daha çok ilerleme sağlar.\nÖneri: sakin bir ton seçin, ilişkileri koruyun ve iki tarafın da rahat edebileceği çözümü arayın.",
+        "Günün sayısı 2 — Ay Enerjisi\nGünün enerjisi güven, destek ve iç huzurla açılır. Önemli işaretler bir konuşmadan, bir histen ya da küçük bir ayrıntıdan gelebilir.\nÖneri: çatışmaya acele etmeyin. Önce durumu hissedin, sonra adım atın."
+      ]
+    },
+    "3": {
+      "label": "Günün sayısı",
+      "energy": "Kendini İfade Enerjisi",
+      "source": "Günün sayısı 3 — Kendini İfade Enerjisi\nBugün Evren size kendinizi gösterme şansı verir. Karizmanızı, yeteneğinizi ve ilhamınızı ortaya koyun. Fikirleriniz başkalarını ateşleyebilir; onları cesurca paylaşın.\nÖneri: yeteneklerinizi saklamayın, dünya gerçek sizi görsün. Yaratıcılık, iletişim ve özgüven günü.",
+      "fallbacks": [
+        "Günün sayısı 3 — Kendini İfade Enerjisi\nBugün Evren size kendinizi gösterme şansı verir. Karizmanızı, yeteneğinizi ve ilhamınızı ortaya koyun. Fikirleriniz başkalarını ateşleyebilir; onları cesurca paylaşın.\nÖneri: yeteneklerinizi saklamayın, dünya gerçek sizi görsün. Yaratıcılık, iletişim ve özgüven günü.",
+        "Günün sayısı 3 — Kendini İfade Enerjisi\nBugün canlı iletişim, ilham ve parlak fikirler desteklenir. İçten konuştuğunuzda sesiniz özellikle net duyulabilir.\nÖneri: yeteneğinizi eylem, söz veya yaratıcılıkla gösterin. Hafiflik bugün doğru kapıları açar.",
+        "Günün sayısı 3 — Kendini İfade Enerjisi\nGünün enerjisi açılmanıza, dikkat çekmenize ve çevrenize ilham vermenize yardım eder. Buluşmalar, sunumlar, yaratıcı işler ve sıcak konuşmalar için uygundur.\nÖneri: fikirlerinizi küçümsemeyin. Küçük bir ifade bile güçlü bir karşılık bulabilir."
+      ]
+    },
+    "4": {
+      "label": "Günün sayısı",
+      "energy": "Emek ve İstikrar Enerjisi",
+      "source": "Günün sayısı 4 — Emek ve İstikrar Enerjisi\nGün odaklanma ve disiplin ister. Her şey kolay ilerlemeyebilir, ama sabır meyvesini verir. Temel kurma zamanı; acele etmeyin, adım adım ilerleyin.\nÖneri: sakinliği ve düzeni koruyun. Hedefinize doğru en az bir somut adım atın; gelecekteki başarının dayanağı olur.",
+      "fallbacks": [
+        "Günün sayısı 4 — Emek ve İstikrar Enerjisi\nGün odaklanma ve disiplin ister. Her şey kolay ilerlemeyebilir, ama sabır meyvesini verir. Temel kurma zamanı; acele etmeyin, adım adım ilerleyin.\nÖneri: sakinliği ve düzeni koruyun. Hedefinize doğru en az bir somut adım atın; gelecekteki başarının dayanağı olur.",
+        "Günün sayısı 4 — Emek ve İstikrar Enerjisi\nBugün plana, düzene ve pratik kararlara dayanmak önemlidir. Gün hızlı olmayabilir, ama uzun süre dayanacak şeyi güçlendirir.\nÖneri: işleri adımlara bölün ve en az birini tamamlayın. İstikrar basit eylemlerle kurulur.",
+        "Günün sayısı 4 — Emek ve İstikrar Enerjisi\nGünün enerjisi ayrıntıya dikkat, sorumluluk ve sabır ister. Tutarlı ilerlerseniz zor görünen bir iş bile yönetilebilir hale gelir.\nÖneri: enerjinizi dağıtmayın. Ana işi seçin ve temiz bir sonuca ulaştırın."
+      ]
+    },
+    "5": {
+      "label": "Günün sayısı",
+      "energy": "Değişim Enerjisi",
+      "source": "Günün sayısı 5 — Değişim Enerjisi\nBugün sürprizler günü. Değişimler, yeni tanışmalar ve fikirler mümkün. Dünya kapılar açıyor, ama içeri girmeye sizin karar vermeniz gerekir.\nÖneri: yeni olana direnmeyin — her şey plan dışı görünse bile. Esnek olun; değişimler size şans getirecek.",
+      "fallbacks": [
+        "Günün sayısı 5 — Değişim Enerjisi\nBugün sürprizler günü. Değişimler, yeni tanışmalar ve fikirler mümkün. Dünya kapılar açıyor, ama içeri girmeye sizin karar vermeniz gerekir.\nÖneri: yeni olana direnmeyin — her şey plan dışı görünse bile. Esnek olun; değişimler size şans getirecek.",
+        "Günün sayısı 5 — Değişim Enerjisi\nGün hareket, taze izlenimler ve alışılmış çerçevenin dışına çıkma şansı getirir. Her şey programa uymayabilir, ama hediye tam orada saklı olabilir.\nÖneri: kendinize spontane alan bırakın. Bugün esneklik, katı kontrolden daha güçlüdür.",
+        "Günün sayısı 5 — Değişim Enerjisi\nBugün yenilenme enerjisi sizi yeni kararlar, insanlar ve yollarla buluşturabilir. Değişen şey, daha özgür bir yaşama açılan kapı olabilir.\nÖneri: eski senaryoya tutunmayın. Uzun süredir sizi çağıran şeye doğru bir adım atın."
+      ]
+    },
+    "6": {
+      "label": "Günün sayısı",
+      "energy": "Sevgi ve Özen Enerjisi",
+      "source": "Günün sayısı 6 — Sevgi ve Özen Enerjisi\nGün duygular ve aile sıcaklığıyla dolu. Sevdiklerinizle konuşmak, barışmak, huzur ve uyum yaratmak için güzel bir zaman.\nÖneri: eve, aileye ve ilişkilere dikkat verin. Bugünkü özeniniz ve iyiliğiniz size katlanarak döner.",
+      "fallbacks": [
+        "Günün sayısı 6 — Sevgi ve Özen Enerjisi\nGün duygular ve aile sıcaklığıyla dolu. Sevdiklerinizle konuşmak, barışmak, huzur ve uyum yaratmak için güzel bir zaman.\nÖneri: eve, aileye ve ilişkilere dikkat verin. Bugünkü özeniniz ve iyiliğiniz size katlanarak döner.",
+        "Günün sayısı 6 — Sevgi ve Özen Enerjisi\nBugün sıcaklık, güzellik ve duygusal denge günü. İlişkiler, ev ve yakınlarınız ana güç kaynağınız olabilir.\nÖneri: özeni baskıya dönüştürmeden gösterin. Küçük bir ilgi işareti beklediğinizden fazlasını iyileştirebilir.",
+        "Günün sayısı 6 — Sevgi ve Özen Enerjisi\nGünün enerjisi uyumu onarmaya, gerilimi yumuşatmaya ve destek hissetmeye yardım eder. Barışma, ev huzuru ve dürüst konuşmalar için uygundur.\nÖneri: nezaketi seçin, ama kendinizi de unutmayın. Özen ısıtmalı, tüketmemeli."
+      ]
+    },
+    "7": {
+      "label": "Günün sayısı",
+      "energy": "Derinleşme ve Farkındalık Enerjisi",
+      "source": "Günün sayısı 7 — Derinleşme ve Farkındalık Enerjisi\nBugün durmak ve kendinizi dinlemek önemlidir. İçsel büyüme ve düşünme günü. Cevaplar dışarıdan değil, içeriden gelir.\nÖneri: acele etmeyin. Farkındalık pratiği yapın, kendinizi analiz edin. Dış dünyayı bırakın ki iç sesinizi duyabilesiniz.",
+      "fallbacks": [
+        "Günün sayısı 7 — Derinleşme ve Farkındalık Enerjisi\nBugün durmak ve kendinizi dinlemek önemlidir. İçsel büyüme ve düşünme günü. Cevaplar dışarıdan değil, içeriden gelir.\nÖneri: acele etmeyin. Farkındalık pratiği yapın, kendinizi analiz edin. Dış dünyayı bırakın ki iç sesinizi duyabilesiniz.",
+        "Günün sayısı 7 — Derinleşme ve Farkındalık Enerjisi\nGün sessizlik, analiz ve kendinizle dürüst bir konuşma için uygundur. Her cevabı insanlarda aramanıza gerek yok; bugün sezgi daha güçlü çalışır.\nÖneri: etrafınızdaki gürültüyü azaltın. Önemli kararlar öncesinde düşünmek için zaman verin.",
+        "Günün sayısı 7 — Derinleşme ve Farkındalık Enerjisi\nBugün enerji sizi içe, anlama ve derin kavrayışa yönlendirir. Okumak, öğrenmek, düşünceleri tamamlamak ve ince işaretleri görmek için iyi bir zaman.\nÖneri: olayları zorlamayın. En değerli cevap, aceleyi bıraktığınızda açılır."
+      ]
+    },
+    "8": {
+      "label": "Günün sayısı",
+      "energy": "Başarı ve Kontrol Enerjisi",
+      "source": "Günün sayısı 8 — Başarı ve Kontrol Enerjisi\nFinans ve işler açısından fırsat günü. Kararlılık ve akılcılık gösterirseniz çok şey başarabilirsiniz.\nÖneri: güvenle hareket edin, ama gereksiz aceleye kapılmayın. Bu yönetim günü; sonucu kendiniz yarattığınız bir gün.",
+      "fallbacks": [
+        "Günün sayısı 8 — Başarı ve Kontrol Enerjisi\nFinans ve işler açısından fırsat günü. Kararlılık ve akılcılık gösterirseniz çok şey başarabilirsiniz.\nÖneri: güvenle hareket edin, ama gereksiz aceleye kapılmayın. Bu yönetim günü; sonucu kendiniz yarattığınız bir gün.",
+        "Günün sayısı 8 — Başarı ve Kontrol Enerjisi\nBugün sonuç, para ve kişisel güç temaları öne çıkar. Gün hedefleri net görmenize ve geleceği etkileyen kararlar almanıza yardım eder.\nÖneri: odağınızı asıl önemli olana verin. Kaynakları sakinlikle, baskı ve telaş olmadan yönetin.",
+        "Günün sayısı 8 — Başarı ve Kontrol Enerjisi\nGünün enerjisi hırsı, iş odaklı düşünmeyi ve başladığınızı sonuca ulaştırmayı destekler. İş, statü veya finans hakkında önemli konuşmalar olabilir.\nÖneri: kararlı olun, ama adil kalın. Güç bugün olgun yönetimle açığa çıkar."
+      ]
+    },
+    "9": {
+      "label": "Günün sayısı",
+      "energy": "Tamamlanma Enerjisi",
+      "source": "Günün sayısı 9 — Tamamlanma Enerjisi\nBugün sonuç çıkarmak, eskiyi tamamlamak ve alanı temizlemek önemlidir. Gereksiz olanı bıraktığınızda yeni döngüye yol açarsınız.\nÖneri: ertelemeyin — biriken konuları çözün. Arınma, bağışlama ve bilinçli tamamlama günü.",
+      "fallbacks": [
+        "Günün sayısı 9 — Tamamlanma Enerjisi\nBugün sonuç çıkarmak, eskiyi tamamlamak ve alanı temizlemek önemlidir. Gereksiz olanı bıraktığınızda yeni döngüye yol açarsınız.\nÖneri: ertelemeyin — biriken konuları çözün. Arınma, bağışlama ve bilinçli tamamlama günü.",
+        "Günün sayısı 9 — Tamamlanma Enerjisi\nGün gereksiz olanı bırakmaya, yarım kalan işleri kapatmaya ve yürüdüğünüz yolun sonucunu görmeye yardım eder. Bugün biriktirmekten çok özgürleşmek önemlidir.\nÖneri: gücünüzü alan konuyu tamamlayın. Yeniye yer, net bir kapanıştan sonra açılır.",
+        "Günün sayısı 9 — Tamamlanma Enerjisi\nBugün enerji sizi arınmaya, affetmeye ve içsel olgunluğa nazikçe götürür. Eski soruları düzenlemek ve hafifliğe dönmek için güzel bir zaman.\nÖneri: geçmişe alışkanlıktan tutunmayın. Deneyime teşekkür edin ve yeni döngüye adım atın."
+      ]
+    }
+  }
+}

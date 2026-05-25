@@ -1,11 +1,15 @@
+import PrivacyPolicyTextLink from "@/components/legal/PrivacyPolicyTextLink";
 import { LANGUAGE_KEY } from "@/constants/params";
+import { AuthContext } from "@/context/AuthContext";
+import { normalizeAppLanguage } from "@/data/appCopy";
+import { i18n } from "@/data/login";
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { getLocales } from "expo-localization";
 import { useFocusEffect, useRouter } from "expo-router";
-import { I18n } from "i18n-js";
-import React, { useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
+import { fs, lh } from "@/constants/typography";
 import {
+  ActivityIndicator,
   Image,
   Keyboard,
   KeyboardAvoidingView,
@@ -18,120 +22,116 @@ import {
   View,
 } from "react-native";
 
-// --- Настройка языков
-const i18n = new I18n({
-  en: {
-    welcomeBack: "Welcome back!",
-    loginSubtitle: "Sign in to your account",
-    email: "Email",
-    password: "Password",
-    forgotPassword: "Forgot password?",
-    login: "Login",
-    noAccount: "Don't have an account?",
-    register: "Register",
-    privacyPolicy:
-      "By continuing, you agree to our Terms of Service and Privacy Policy.",
-  },
-  ru: {
-    welcomeBack: "Добро пожаловать обратно!",
-    loginSubtitle: "Войдите в свой аккаунт",
-    email: "Email",
-    password: "Пароль",
-    forgotPassword: "Забыли пароль?",
-    login: "Войти",
-    noAccount: "Нет аккаунта?",
-    register: "Зарегистрироваться",
-    privacyPolicy:
-      "Продолжая, вы соглашаетесь с нашими Условиями обслуживания и Политикой конфиденциальности.",
-  },
-  kz: {
-    welcomeBack: "Қайта қош келдіңіз!",
-    loginSubtitle: "Есептік жазбаға кіріңіз",
-    email: "Email",
-    password: "Құпия сөз",
-    forgotPassword: "Құпия сөзді ұмыттыңыз ба?",
-    login: "Кіру",
-    noAccount: "Аккаунт жоқ па?",
-    register: "Тіркелу",
-    privacyPolicy:
-      "Жалғастыру арқылы сіз біздің Қызмет көрсету шарттарымызбен және Құпиялылық саясатымызбен келісесіз.",
-  },
-  tr: {
-    welcomeBack: "Tekrar hoş geldiniz!",
-    loginSubtitle: "Hesabınıza giriş yapın",
-    email: "Email",
-    password: "Şifre",
-    forgotPassword: "Şifrenizi mi unuttunuz?",
-    login: "Giriş yap",
-    noAccount: "Hesabınız yok mu?",
-    register: "Kayıt ol",
-    privacyPolicy:
-      "Devam ederek Hizmet Şartlarımızı ve Gizlilik Politikamızı kabul etmiş olursunuz.",
-  },
-});
-
-i18n.enableFallback = true;
-i18n.defaultLocale = "en";
-
 const LoginScreen = () => {
   const router = useRouter();
+  const { login } = useContext(AuthContext);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [locale, setLocale] = useState<string | null>(null);
+  const [locale, setLocale] = useState("en");
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const loadLanguage = useCallback(async () => {
+    try {
+      setLoading(true);
+
+      const savedLang = await AsyncStorage.getItem(LANGUAGE_KEY);
+
+      if (savedLang) {
+        const normalized = normalizeAppLanguage(savedLang);
+        i18n.locale = normalized;
+        setLocale(normalized);
+      } else {
+        i18n.locale = "en";
+        setLocale("en");
+        router.replace("/auth/wizard");
+        return;
+      }
+    } catch (e) {
+      console.log("Ошибка загрузки языка", e);
+      i18n.locale = "en";
+      setLocale("en");
+    } finally {
+      setLoading(false);
+    }
+  }, [router]);
 
   useFocusEffect(
-    React.useCallback(() => {
-      const loadLanguage = async () => {
-        try {
-          const savedLang = await AsyncStorage.getItem(LANGUAGE_KEY);
-          if (savedLang) {
-            i18n.locale = savedLang;
-            setLocale(savedLang);
-          } else {
-            const systemLocale = getLocales()[0]?.languageCode || "en";
-            i18n.locale = systemLocale;
-            setLocale(systemLocale);
-          }
-        } catch (e) {
-          console.log("Ошибка загрузки языка", e);
-          i18n.locale = "en";
-          setLocale("en");
-        } finally {
-          setLoading(false);
-        }
-      };
-
+    useCallback(() => {
       loadLanguage();
-    }, [])
+    }, [loadLanguage]),
   );
 
+  const normalizeError = (err: unknown): string => {
+    if (!err) return i18n.t("loginFailed");
+
+    if (typeof err === "string") return err;
+
+    if (typeof err === "object" && err !== null) {
+      if (
+        "message" in err &&
+        typeof (err as { message?: unknown }).message === "string"
+      ) {
+        return (err as { message: string }).message;
+      }
+
+      if (
+        "code" in err &&
+        typeof (err as { code?: unknown }).code === "string"
+      ) {
+        return (err as { code: string }).code;
+      }
+    }
+
+    return i18n.t("loginFailed");
+  };
+
+  const handleLogin = async () => {
+    try {
+      setError(null);
+      setSubmitting(true);
+
+      const res = await login({ email, password });
+
+      if (res.success) {
+        router.push("/(tabs)");
+      } else {
+        setError(normalizeError(res.error));
+      }
+    } catch (e) {
+      console.log("Login error:", e);
+      setError(normalizeError(e));
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const openPrivacyPolicy = () => {
+    router.push("/privacy-policy");
+  };
+
   if (loading) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={styles.loaderContainer}>
+        <ActivityIndicator size="large" color="#1E90FF" />
+      </View>
+    );
   }
 
-  const handleLogin = () => {
-    console.log({ email, password });
-    router.push("/(tabs)");
-  };
-
-  const forgotButton = () => {
-    router.push("/auth/forgotPassword");
-  };
-
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        {/* Основная часть, двигается с клавиатурой */}
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : undefined}
           style={{ flex: 1, justifyContent: "center" }}
         >
-          <View>
+          <View key={locale}>
             <View style={styles.logoContainer}>
               <Image
-                source={require("../../assets/logo/logo.jpeg")}
+                source={require("../../assets/ios-icon.png")}
                 style={styles.logo}
                 resizeMode="contain"
               />
@@ -139,6 +139,8 @@ const LoginScreen = () => {
 
             <Text style={styles.title}>{i18n.t("welcomeBack")}</Text>
             <Text style={styles.subtitle}>{i18n.t("loginSubtitle")}</Text>
+
+            {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
             <View style={styles.inputContainer}>
               <Ionicons
@@ -150,7 +152,7 @@ const LoginScreen = () => {
               <TextInput
                 style={styles.input}
                 placeholder={i18n.t("email")}
-                placeholderTextColor={"#8e8e93"}
+                placeholderTextColor="#8e8e93"
                 value={email}
                 onChangeText={setEmail}
                 keyboardType="email-address"
@@ -168,12 +170,14 @@ const LoginScreen = () => {
               <TextInput
                 style={styles.input}
                 placeholder={i18n.t("password")}
-                placeholderTextColor={"#8e8e93"}
+                placeholderTextColor="#8e8e93"
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry={!showPassword}
               />
-              <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+              <TouchableOpacity
+                onPress={() => setShowPassword((prev) => !prev)}
+              >
                 <Ionicons
                   name={showPassword ? "eye-off-outline" : "eye-outline"}
                   size={20}
@@ -185,7 +189,7 @@ const LoginScreen = () => {
 
             <TouchableOpacity
               style={styles.forgotButton}
-              onPress={forgotButton}
+              onPress={() => router.push("/auth/forgotPassword")}
             >
               <Text style={styles.forgotText}>{i18n.t("forgotPassword")}</Text>
             </TouchableOpacity>
@@ -196,9 +200,13 @@ const LoginScreen = () => {
                 { backgroundColor: email && password ? "#1E90FF" : "#ccc" },
               ]}
               onPress={handleLogin}
-              disabled={!email || !password}
+              disabled={!email || !password || submitting}
             >
-              <Text style={styles.buttonText}>{i18n.t("login")}</Text>
+              {submitting ? (
+                <ActivityIndicator color="#fff" />
+              ) : (
+                <Text style={styles.buttonText}>{i18n.t("login")}</Text>
+              )}
             </TouchableOpacity>
 
             <View style={styles.registerContainer}>
@@ -210,8 +218,15 @@ const LoginScreen = () => {
           </View>
         </KeyboardAvoidingView>
 
-        {/* --- Футер внизу: НЕ поднимается при клавиатуре --- */}
-        <Text style={styles.footerText}>{i18n.t("privacyPolicy")}</Text>
+        <View style={styles.footerWrap}>
+          <PrivacyPolicyTextLink
+            lang={locale}
+            linkStyle={styles.footerLink}
+            onPress={openPrivacyPolicy}
+            textStyle={styles.footerText}
+            variant="loginFooter"
+          />
+        </View>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -224,6 +239,12 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#fff",
   },
+  loaderContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
+  },
   logoContainer: {
     alignItems: "center",
     marginBottom: 30,
@@ -234,14 +255,14 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   title: {
-    fontSize: 26,
+    fontSize: fs(26),
     fontWeight: "bold",
     color: "#121212",
     marginBottom: 5,
     textAlign: "center",
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: fs(16),
     color: "#555",
     marginBottom: 30,
     textAlign: "center",
@@ -255,12 +276,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     elevation: 1,
   },
-  icon: { marginRight: 10 },
-  iconRight: { marginLeft: 10 },
+  icon: {
+    marginRight: 10,
+  },
+  iconRight: {
+    marginLeft: 10,
+  },
   input: {
     flex: 1,
     height: 50,
-    fontSize: 16,
+    fontSize: fs(16),
     color: "#121212",
   },
   forgotButton: {
@@ -279,7 +304,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#fff",
-    fontSize: 18,
+    fontSize: fs(18),
     fontWeight: "700",
   },
   registerContainer: {
@@ -290,11 +315,25 @@ const styles = StyleSheet.create({
     color: "#1E90FF",
     fontWeight: "600",
   },
+  footerWrap: {
+    marginBottom: 40,
+    alignItems: "center",
+    paddingHorizontal: 10,
+  },
   footerText: {
-    fontSize: 12,
+    fontSize: fs(12),
     color: "#999",
     textAlign: "center",
-    marginBottom: 40,
+    lineHeight: lh(18),
+  },
+  footerLink: {
+    fontSize: fs(12),
+    lineHeight: lh(18),
+  },
+  errorText: {
+    color: "red",
+    textAlign: "center",
+    marginBottom: 10,
   },
 });
 
